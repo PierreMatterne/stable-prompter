@@ -7,9 +7,45 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	
-	Starting a new project :)
 
+	<header><h1>Stable Prompter</h1></header>
+	
+	<main style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;">
+
+		<section>
+			<h2>Ô, muse, inspire me a new prompt!</h2>
+			<div id="prompt" class="zonePrompt"></div>
+			<button id="btnGenPrompt">Inspire me</button>
+		</section>
+
+		<section>
+			<h2>Subject</h2>
+			<div id="subjectsList"></div>
+		</section>
+
+		<section>
+			<h2>Characters</h2>
+			<h3>Type of character</h3>
+			<div id="characters"></div>
+			<h3>Caracteristics</h3>
+			<div id="colorList"></div>
+			<hr>
+			<div id="charaAdjCheckboxes"></div>
+			<h3>Hair</h3>
+			<h3>Cloths</h3>
+		</section>
+
+	</main>
+
+	<footer>By Pierre Matterne | Tested on <a href="https://www.artbreeder.com/">Artbreeder</a></footer>
+
+	<!-- Bibliotheques -->
+	<script src="bibs/bib_adj_characters.js"></script>
+	<script src="bibs/bib_characters.js"></script>
+	<script src="bibs/bib_colors.js"></script>
+	<script src="bibs/structure_subjects.js"></script>
+
+	<script src="tools.js"></script>
 	<script src="main.js"></script>
 </body>
 </html>
