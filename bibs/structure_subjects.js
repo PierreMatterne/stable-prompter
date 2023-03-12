@@ -36,12 +36,17 @@ const SUBJECTS = {
 		"A concept drawing of a vegetal hovering vehicule.",
 		"An old rusted iron locomotive, buried under vegetation. Light is working.",
 		],
+	"Building": [
+		"A %building with small doors and no window.",
+		"A tower made of %material.",
+		],
 	"Objects": [
-		"A %material shield, decorated with a coat of arms, featuring a %animal.",
+		"A %material %object, decorated with a coat of arms, featuring a %animal.",
+		"A shiny %object made of %material.",
 		],
 	"Medieval drawing": 
 	[
-		"An illumination depicting a castle or fortress with several towers and battlements.",
+		"An illumination depicting a %building with several towers and battlements.",
 		"An intricate drawing on a page yellowed with age. A knight on horseback, in full armor, holding a lance.",
 		"An illumination in a codex. A woman bath in a bucket. A rabbit watches her.",
 		"A drawing in black ink on a parchment or vellum surface.",

@@ -1,0 +1,88 @@
+const BIB_OBJECTS = {
+	"Weapons & Armor" : [
+		"armor",
+		"sword",
+		"dagger",
+		"lance",
+		"spear",
+		"helmet",
+		"war hammer",
+		"weapon of mass destruction",
+		"weapon",
+		],
+
+	"Modern life" : [
+		"fridge",
+		"computer",
+		"electronic device",
+		"ballpen",
+		"rotary telephone",
+		"modular synthesizer",
+		],
+
+	"Biologics" : [
+		"brain",
+		"organ",
+		"bone",
+		"skull",
+		],
+
+	"Furniture" : [
+		"bookshelf",
+		"cabinet",
+		"coffer",
+		"chimney",
+		"coffin",
+		"curiosities cabinet",
+		],
+
+	"Vehicules" : [
+		"rocket",
+		"plane",
+		"train",	
+		"locomotive",
+		"truck",
+		"car",
+		"moto",
+		"bycicle",
+		"hovercraft",
+		"boat",
+		"submarine",
+		"bathyscaphe",
+		],
+
+	"Other" : [
+
+		"book",
+		"candle",
+		"clock",
+		"column",
+		"compass",
+		"crystal ball",	
+		"fire",
+		"fountain",
+		"frames",
+		"furnitures",
+		"gun",
+		"hourglass",
+		"jar",
+		"keys",
+		"lantern",
+		"light",
+		"ring",
+		"road",
+		"scale",
+		"sculpture",
+		"sofa",
+		"statue",
+		"stick",
+		"ruby",
+		"table",
+		"teacup",
+		"totem",
+		"urn",
+		"wall",
+		"window",
+		]
+
+};

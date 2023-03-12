@@ -38,14 +38,23 @@ const getOneFreshListFrom = (CheckboxGroupName, fulllist) => {
 	return assembleListOfUniqueElements(selectedCategoriesForNextPrompt, fulllist);
 }
 
+/* Where to pick random word */
+const configSelectables = [
+	{name: "characters", bib: BIB_CHARACTERS},
+	{name: "adj_chara", bib: ADJ_CHARA},
+	{name: "colors", bib: BIB_COLORS},
+	{name: "materials", bib: BIB_MATERIAL},
+	{name: "lookalike", bib: BIB_CELEB},
+	{name: "details", bib: BIB_DETAILS},
+	{name: "buildings", bib: BIB_BUILDINGS},
+	{name: "objects", bib: BIB_OBJECTS},
+	];
+
 /* Refresh list taking checked checkbox into account */
 const refresh_all_lists = () => {
-	currentSelectables.characters = getOneFreshListFrom("characters", BIB_CHARACTERS);
-	currentSelectables.adj_chara = getOneFreshListFrom("adj_chara", ADJ_CHARA);
-	currentSelectables.colors = getOneFreshListFrom("colors", BIB_COLORS);
-	currentSelectables.materials = getOneFreshListFrom("materials", BIB_MATERIAL);
-	currentSelectables.lookalike = getOneFreshListFrom("lookalike", BIB_CELEB);
-	currentSelectables.details = getOneFreshListFrom("details", BIB_DETAILS);
+	for (item of configSelectables){
+		currentSelectables[item.name] = getOneFreshListFrom(item.name, item.bib);
+	}
 }
 
 const replacingWords = text => {
@@ -63,12 +72,12 @@ const replacingWords = text => {
 		text = text.replace('%plant', pickOne(BIB_CHARACTERS["Plants, Vegetation"]));
 		text = text.replace('%celeb', pickOne(currentSelectables.lookalike));
 		text = text.replace('%detail', pickOne(currentSelectables.details));
+		text = text.replace('%building', pickOne(currentSelectables.buildings));
+		text = text.replace('%object', pickOne(currentSelectables.objects));
 
 		//text = text.replace('%hair', getHairStyle());
-		//text = text.replace('%object', getObject());
 		//text = text.replace('%adj_object', pickOne(adj_objects));
 		//text = text.replace('%place', getPlace());
-		//text = text.replace('%building', pickOne(listBuildings));
 		//text = text.replace('%action', getAction());
 		//text = text.replace('%adj_place', pickOne(adj_places));
 		//text = text.replace('%cloth', pickOne(getClothsSet()));
@@ -191,6 +200,8 @@ const prepareAllCheckboxesLists = () => {
 	prepareCheckboxes("#lookalikes", BIB_CELEB, "lookalike");
 	prepareCheckboxes("#details", BIB_DETAILS, "details");
 	prepareCheckboxes("#rendering", BIB_RENDERING, "rendering");
+	prepareCheckboxes("#buildings", BIB_BUILDINGS, "buildings");
+	prepareCheckboxes("#objects", BIB_OBJECTS, "objects");
 }
 
 
