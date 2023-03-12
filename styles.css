@@ -29,6 +29,7 @@ header {
 }
 main {
 	background: #fcfcfc;
+	padding: 2em;
 }
 footer {
 	background: #0006;
@@ -50,10 +51,22 @@ button {
 	box-shadow: 1px 2px 2px rgba(0,0,0,0.3);
 }
 
-
+.mainGrid {
+	display: grid; 
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1em;
+}
 
 .zonePrompt {
 	padding:1em;
 	background: #0001;
 	border:1px solid #0003;
+}
+
+
+/* TEMP */
+section {
+	border: 1px solid #0003;
+	padding: 1em;
+	border-radius: 1em;
 }

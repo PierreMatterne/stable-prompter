@@ -1,6 +1,7 @@
 const BIB_CHARACTERS = {
-	"Base" : ["boy","father","girl","child","grandfather","grandmother","man","mother","twins","widow","woman","teen","couple",],
-	"Contemporary" : ["astronaut","ballerina","barmaid","bimbo","butcher","clown","detective","doctor","farmer","firefighter","fisherman","gangster","hiker","hunter","mechanic","merchant","model","nurse","park ranger","politician","rock band","scholar","schoolgirls","scientist","soldier","student","SWAT team","zookeeper",],
+	"Base" : ["boy","father","girl","child","grandfather","grandmother","man","mother","twins","widow","woman","teen","couple", "family", "people",],
+
+	"Contemporary" : ["astronaut","ballerina","barmaid","bimbo","butcher","clown","detective","doctor","farmer","firefighter","fisherman","gangster","hiker","hunter","mechanic","merchant","model","nurse","park ranger","politician","rock band","scholar","schoolgirls","scientist","soldier","student","SWAT team","zookeeper", "photographer",],
 	
 	"Sports" : ["base jumper","BMX rider","bodybuilder","boxer","bungee jumper","cheerleader","dancer","deep sea diver","discus thrower","diver","freestyle motocross rider","gymnast","hammer thrower","high jumper","horseback rider","javelin thrower","long jumper","martial artist","mountain biker","parkour practitioner","pole vaulter ","racecar driver","rock climber","scuba diver","shot putter","skateboarder","skier","skier","snowboarder","stunt performer","surfer","trampolinist","triple jumper","wakeboarder","weightlifter",],
 
@@ -26,7 +27,7 @@ const BIB_CHARACTERS = {
 
 	"Mecanical Beeings": ["android","biomachine","computer","cyborg","drone","robot","transformers","truck","car","flight","rocket",],
 
-	"Mythological creatures": ["Angels","Bigfoot","Boggarts","Brownies","Centaurs","Chimera","Cockatrice","Colchis Bull","Cyclops","Demigod","Demons","Doppelganger","Dragons","Dryads","Echidna","Efreet","Erinyes","Fairies","Fauns","Gorgons","Grendel","Griffins","Harpies","Hippogriff","Hydra","Imps","Jabberwock","Kitsune","Kraken","Lamia","Mermaids","Minotaurs","Mothman","Nymphs","Ogres","Oni","Orcs","Ouroboros","Pegasus","Phoenixes","Satyrs","Sirens","Sphinxes","Succubus","Tengu","Triton","Trolls","Unicorns","Valkyries","Wights","Will-o'-the-wisp","Winged horse","Wyvern","Yara-ma-yha-who","Yetis",],
+	"Mythological creatures": ["angels","bigfoot","boggarts","brownies","centaurs","chimera","cockatrice","colchis bull","cyclops","demigod","demons","doppelganger","dragons","dryads","echidna","efreet","erinyes","fairies","fauns","gorgons","grendel","griffins","harpies","hippogriff","hydra","imps","jabberwock","kitsune","kraken","lamia","mermaids","minotaurs","mothman","nymphs","ogres","oni","orcs","ouroboros","pegasus","phoenixes","satyrs","sirens","sphinxes","succubus","tengu","triton","trolls","unicorns","valkyries","wights","will-o'-the-wisp","winged horse","wyvern","yara-ma-yha-who","yetis",],
 
 	"Outerworld Creatures": [	"alien","Predator","extraterrestrial","xenomorph","E.T.","Grey","Reptilian","Insectoid","Mothman","Zorgon","Arcturian","Betelgeusian","Cygnian","Delphinian","Eltanin","Gliesian","Koldasian","Lyran","Orion","Sirian",],
 
@@ -39,9 +40,9 @@ const BIB_CHARACTERS = {
 	"Others": ["acolyte","acrobat","adept","agent","alchemist","apothecary","archer","statue","assassin","bandit","blacksmith","bowman","brawler","captain","charmer","crusader","cutpurse","duelist","earth-shaker","fighter","fool","foreman","fortuneteller","gladiator","guard",
 		"heavy tank","huntsman","hypnotist","illusionist","jumper","legatus","martial artist","matrona","mercenary","mountaineer","officer","paladin","paragon","patrol","pickpocket","pilgrim","pirate","potentates","protector","ranger","ringleader","rogue",],
 
-	'Dr Who bestiary': ["Ood", "Sontarans","Weeping Angels","Daleks","Cybermen","Silence","Vashta Nerada","Zygons","Mire","Ice Warrior","Adipose","Tractators","Emojibots","Cloister Wraiths","Sea Devils","Judoon","Silurians","Sandmen","Saturnyns","Axons","Clockwork Droids","Slitheen","Pigmen",],
+	'Dr Who bestiary': ["ood", "sontarans","weeping angels","daleks","cybermen","silence","vashta nerada","zygons","mire","ice warrior","adipose","tractators","emojibots","cloister wraiths","sea devils","judoon","silurians","sandmen","saturnyns","axons","clockwork droids","slitheen","pigmen",],
 
-	"Strangest things": ["Balderdash","Cattywampus","Collywobbles","Fiddlesticks","Flummox","Gobbledygook","Hodgepodge","Hooligan","Kerfuffle","Lollygag","Lollygagging","Malarkey","Noodleheaded","Piffle","Razzle-dazzle","Dkedaddle","Taradiddle","Whippersnapper",],
+	"Strangest things": ["balderdash","cattywampus","collywobbles","fiddlesticks","flummox","gobbledygook","hodgepodge","hooligan","kerfuffle","lollygag","lollygagging","malarkey","noodleheaded","piffle","razzle-dazzle","dkedaddle","taradiddle","whippersnapper",],
 };
 
 

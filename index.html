@@ -11,29 +11,50 @@
 	<header><h1>Stable Prompter</h1></header>
 	
 	<main>
+		<h2>Ô, muse, inspire me a new prompt!</h2>
+		<div class="mainGrid">
 
-		<section>
-			<h2>Ô, muse, inspire me a new prompt!</h2>
-			<div id="prompt" class="zonePrompt"></div>
-			<button id="btnGenPrompt">Inspire me</button>
-		</section>
+			<section>
+				<h3>I'd like a picture representing a…</h3>
+				<div id="subjectsList"></div>
+				<hr>
+				Description must include…
+				<div id="ingredients"></div>
+				<label for="ingredients">Celebrity</label>
+				<input type="checkbox" name="ingredients" id="celebrity" data-tag="Celebrity">
+				<hr>
+				Something like this?
+				<br><br>
+				<div id="prompt" class="zonePrompt"></div>
+				<button id="btnGenPrompt">Another</button>
+			</section>
 
-		<section>
-			<h2>Subject</h2>
-			<div id="subjectsList"></div>
-		</section>
+			<section>
+				<h3>Kind of characters</h3>
+				<div id="characters"></div>
+			</section>
 
-		<section>
-			<h2>Characters</h2>
-			<h3>Type of character</h3>
-			<div id="characters"></div>
-			<h3>Colors</h3>
-			<div id="colorList"></div>
-			<h3>Caracteristics</h3>
-			<div id="charaAdjCheckboxes"></div>
-			<h3>Hair</h3>
-			<h3>Cloths</h3>
-		</section>
+			<section>
+				<h3>Colors</h3>
+				<div id="colorList"></div>
+			</section>
+			<section>
+				<h3>Caracteristics</h3>
+				<div id="charaAdjCheckboxes"></div>
+			</section>
+			<section>
+				<h3>Likeness</h3>
+				The main character looks like…
+				<div id="celebrities"></div>
+			</section>
+			<section>
+				<h3>Hair</h3>
+				<h3>Cloths</h3>
+				<h3>Material</h3>
+				<div id="materials"></div>
+			</section>
+
+		</div>
 
 	</main>
 
@@ -43,6 +64,9 @@
 	<script src="bibs/bib_adj_characters.js"></script>
 	<script src="bibs/bib_characters.js"></script>
 	<script src="bibs/bib_colors.js"></script>
+	<script src="bibs/bib_celebrities.js"></script>
+	<script src="bibs/bib_materials.js"></script>
+	<script src="bibs/bib_phrases.js"></script>
 	<script src="bibs/structure_subjects.js"></script>
 
 	<script src="tools.js"></script>

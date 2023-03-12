@@ -1,5 +1,6 @@
 const ADJ_CHARA = {
 	"Age" : [
+		"antique",
 		"young",
 		"youthful",
 		"7 year old",

@@ -9,6 +9,9 @@ const log = (text, style) => {
 	}
 }
 
+/* RETURN if a specific checkbox is checked */
+const isCheckBoxChecked = id => document.querySelector('#' + id).checked;
+
 /* Get the list of keys in an object */
 const listKeysOfObjects = obj => {
 	return Object.keys(obj);
