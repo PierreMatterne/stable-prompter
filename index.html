@@ -21,38 +21,55 @@
 				Description must include…
 				<div id="ingredients"></div>
 				<label for="ingredients">Celebrity</label>
-				<input type="checkbox" name="ingredients" id="celebrity" data-tag="Celebrity">
+				<input type="checkbox" name="ingredients" id="celebrity">
+				<label for="ingredients">Details</label>
+				<input type="checkbox" name="ingredients" id="detail">
 				<hr>
 				Something like this?
 				<br><br>
 				<div id="prompt" class="zonePrompt"></div>
+				<label for="clipboard">Auto-copy to clipboard</label>
+				<input type="checkbox" name="clipboard" id="clipboard">
+				<hr>
 				<button id="btnGenPrompt">Another</button>
+				<hr>
+				<!-- Buttons with parts. When click, replace only that part -->
+
+				<hr>
+				<h2>Lorem Ipsum</h2>
+				<p>If you don't select anything in the right lists, all option are availables.</p>
+				<p>Selecting a category restrict the random selection to a word of these themes.</p>
 			</section>
 
 			<section>
+				<h2>About the character (if any)</h2>
 				<h3>Kind of characters</h3>
 				<div id="characters"></div>
-			</section>
-
-			<section>
-				<h3>Colors</h3>
-				<div id="colorList"></div>
-			</section>
-			<section>
 				<h3>Caracteristics</h3>
 				<div id="charaAdjCheckboxes"></div>
-			</section>
-			<section>
 				<h3>Likeness</h3>
 				The main character looks like…
 				<div id="celebrities"></div>
-			</section>
-			<section>
 				<h3>Hair</h3>
 				<h3>Cloths</h3>
+			</section>
+
+			<section>
+				<h2>About the picture</h2>
+				<h3>Colors</h3>
+				<div id="colorList"></div>
+				<h3>Details</h3>
+				There must be some…
+				<div id="details"></div>
 				<h3>Material</h3>
 				<div id="materials"></div>
 			</section>
+
+			<section>
+				<h2>About the ART</h2>
+				<h3>Artists</h3>
+			</section>
+
 
 		</div>
 
@@ -66,6 +83,7 @@
 	<script src="bibs/bib_colors.js"></script>
 	<script src="bibs/bib_celebrities.js"></script>
 	<script src="bibs/bib_materials.js"></script>
+	<script src="bibs/bib_details.js"></script>
 	<script src="bibs/bib_phrases.js"></script>
 	<script src="bibs/structure_subjects.js"></script>
 

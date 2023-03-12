@@ -4,6 +4,8 @@ const currentSelectables = {
 	adj_chara: [],
 	colors : [],
 	materials: [],
+	details: [],
+	celebrities: [],
 }
 
 /* Obtain the main subject */
@@ -34,6 +36,7 @@ const refresh_all_lists = () => {
 	currentSelectables.colors = getOneFreshListFrom("colors", BIB_COLORS);
 	currentSelectables.materials = getOneFreshListFrom("materials", BIB_MATERIAL);
 	currentSelectables.celebrities = getOneFreshListFrom("celebrities", BIB_CELEB);
+	currentSelectables.details = getOneFreshListFrom("details", BIB_DETAILS);
 }
 
 const replacingWords = text => {
@@ -50,6 +53,7 @@ const replacingWords = text => {
 		text = text.replace('%animal', pickOne(BIB_CHARACTERS["Animals"]));
 		text = text.replace('%plant', pickOne(BIB_CHARACTERS["Plants, Vegetation"]));
 		text = text.replace('%celeb', pickOne(currentSelectables.celebrities));
+		text = text.replace('%detail', pickOne(currentSelectables.details));
 
 		//text = text.replace('%hair', getHairStyle());
 		//text = text.replace('%material', pickOne(materials));
@@ -80,6 +84,38 @@ const replacingWords = text => {
 
 
 
+const currentProposition = {
+	subject : null,
+	lookalike : null,
+	details : null,
+};
+
+
+
+const buildSubject = () => {
+	currentProposition.subject = replacingWords(getMainSubject());
+	displayText();
+}
+const buildLookalike = () => {
+	currentProposition.lookalike = replacingWords(pickOne(PHRASES_LOOKALIKE));
+	displayText();
+}
+const buildDetails = () => {
+	currentProposition.details = replacingWords(pickOne(PHRASES_DETAILS));
+	displayText();
+}
+
+const composeTheFinalText = () => {
+	let html = "";
+	html += currentProposition.subject;
+	if(isCheckBoxChecked("celebrity")){
+		html += currentProposition.lookalike
+	};
+	if(isCheckBoxChecked("detail")){
+		html += currentProposition.details
+	};
+	return html;
+}
 
 
 /* Gather information and construct a text */
@@ -88,31 +124,32 @@ const generateNewPrompt = () => {
 	log("Generation of a new prompt", "title");
 	let html = "";
 
-	/* Getting the main subject */
-	html += getMainSubject();
-	log(html);
-
-	/* TODO getting the likeness */
-	/* Check if a certain checkbox is checked */
-	if(isCheckBoxChecked("celebrity")){
-		html += pickOne(PHRASES_LOOKALIKE);
-	};
-	/* Then, add something to the html */
+	buildSubject();
+	buildLookalike();
+	buildDetails();
 
 	/* TODO getting "ingredients" */
-
 	/* TODO getting the techniques */
-
 	/* TODO adding artists */
-
 	/* TODO adding influences */
 
-		/* TODO replacing tag words inside html */
-	html = replacingWords(html);
-	log(html);
-
-	document.querySelector("#prompt").innerHTML = html;
+	displayText();
 }
+
+
+
+const displayText = () => {
+	html = composeTheFinalText();
+	document.querySelector("#prompt").innerHTML = html;
+	
+	if(isCheckBoxChecked("clipboard")){
+		navigator.clipboard.writeText(html);	
+	}
+}
+
+
+
+
 /* WIP ================== WIP */
 
 
@@ -124,6 +161,7 @@ const prepareAllCheckboxesList = () => {
 	prepareCheckboxes("#characters", BIB_CHARACTERS, "characters");
 	prepareCheckboxes("#materials", BIB_MATERIAL, "materials");
 	prepareCheckboxes("#celebrities", BIB_CELEB, "celebrities");
+	prepareCheckboxes("#details", BIB_DETAILS, "details");
 }
 
 
