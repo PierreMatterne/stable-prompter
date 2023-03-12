@@ -65,6 +65,10 @@ button {
 	min-height:10em;
 }
 
+.parts button {
+	width: 100%;
+}
+
 
 /* TEMP */
 section {

@@ -1,3 +1,9 @@
+/* Place some HTML inside a tag#id */
+const placeInDOM = (html, id) => {
+	let targetEl = document.getElementById(id);
+	targetEl.innerHTML = html;
+}
+
 /* Fancy LOG */
 const log = (text, style) => {
 	switch (style) {
@@ -24,6 +30,10 @@ const pickOne = list => {
 
 /* Construct a checkboxes list and place it in HTML */
 const prepareCheckboxes = (targetId, list, name) => {
+	console.log("------------------------");
+	log(targetId);
+	log(list);
+	log(name);
 	let target = document.querySelector(targetId);
 	let listeAdjCategories = listKeysOfObjects(list);
 	let html = "";
@@ -50,3 +60,4 @@ const getSelectedCheckboxesOfName = (serie) => {
 	let listsOfTags = getDetailsOfCheckboxesForSerie(serie);
 	return  listsOfTags.checkedList.length === 0 ? listsOfTags.fullList  : listsOfTags.checkedList;
 }
+

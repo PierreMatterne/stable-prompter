@@ -17,77 +17,100 @@
 			<section>
 				<h3>I'd like a picture representing a…</h3>
 				<div id="subjectsList"></div>
+				
 				<hr>
+
 				Description must include…
-				<div id="ingredients"></div>
-				<label for="ingredients">Celebrity</label>
-				<input type="checkbox" name="ingredients" id="celebrity">
-				<label for="ingredients">Details</label>
-				<input type="checkbox" name="ingredients" id="detail">
-				<hr>
-				Something like this?
-				<br><br>
-				<div id="prompt" class="zonePrompt"></div>
-				<label for="clipboard">Auto-copy to clipboard</label>
-				<input type="checkbox" name="clipboard" id="clipboard">
-				<hr>
-				<button id="btnGenPrompt">Another</button>
-				<hr>
-				<!-- Buttons with parts. When click, replace only that part -->
+				<div id="ingredients">
+					<input type="checkbox" name="ingredients" id="lookalike">
+					<label for="ingredients">Celebrity</label><br>
 
-				<hr>
-				<h2>Lorem Ipsum</h2>
-				<p>If you don't select anything in the right lists, all option are availables.</p>
-				<p>Selecting a category restrict the random selection to a word of these themes.</p>
-			</section>
+					<input type="checkbox" name="ingredients" id="detail">
+					<label for="ingredients">Details</label><br>
 
-			<section>
-				<h2>About the character (if any)</h2>
-				<h3>Kind of characters</h3>
-				<div id="characters"></div>
-				<h3>Caracteristics</h3>
-				<div id="charaAdjCheckboxes"></div>
-				<h3>Likeness</h3>
-				The main character looks like…
-				<div id="celebrities"></div>
-				<h3>Hair</h3>
-				<h3>Cloths</h3>
-			</section>
+					<input type="checkbox" name="ingredients" id="renderings">
+					<label for="renderings">Renderings techniques</label><br>
 
-			<section>
-				<h2>About the picture</h2>
-				<h3>Colors</h3>
-				<div id="colorList"></div>
-				<h3>Details</h3>
-				There must be some…
-				<div id="details"></div>
-				<h3>Material</h3>
-				<div id="materials"></div>
-			</section>
-
-			<section>
-				<h2>About the ART</h2>
-				<h3>Artists</h3>
-			</section>
+					<!-- 
+											How many : 
+					<input type="range" min="1" max="3" value="1">
+				-->
+			</div>
 
 
-		</div>
+			<hr>
+			Something like this?
+			<br><br>
+			<div id="prompt" class="zonePrompt"></div>
+			<label for="clipboard">Auto-copy to clipboard</label>
+			<input type="checkbox" name="clipboard" id="clipboard">
+			<hr>
+			<button id="btnGenPrompt">Another</button>
+			<hr>
+			<!-- Buttons with parts. When click, replace only that part -->
+			<div id="parts" class="parts">
+				<button id="onlyChangeSubject"></button>
+				<button id="onlyChangeLookalike"></button>
+				<button id="onlyChangeDetails"></button>
+				<button id="onlyChangeRendering"></button>
+			</div>
 
-	</main>
+			<hr>
+			<h2>Lorem Ipsum</h2>
+			<p>If you don't select anything in the right lists, all option are availables.</p>
+			<p>Selecting a category restrict the random selection to a word of these themes.</p>
+		</section>
 
-	<footer>By Pierre Matterne | Tested on <a href="https://www.artbreeder.com/">Artbreeder</a></footer>
+		<section>
+			<h2>About the character (if any)</h2>
+			<h3>Kind of characters</h3>
+			<div id="characters"></div>
+			<h3>Caracteristics</h3>
+			<div id="charaAdjCheckboxes"></div>
+			<h3>Likeness</h3>
+			The main character looks like…
+			<div id="lookalikes"></div>
+			<h3>Hair</h3>
+			<h3>Cloths</h3>
+		</section>
 
-	<!-- Bibliotheques -->
-	<script src="bibs/bib_adj_characters.js"></script>
-	<script src="bibs/bib_characters.js"></script>
-	<script src="bibs/bib_colors.js"></script>
-	<script src="bibs/bib_celebrities.js"></script>
-	<script src="bibs/bib_materials.js"></script>
-	<script src="bibs/bib_details.js"></script>
-	<script src="bibs/bib_phrases.js"></script>
-	<script src="bibs/structure_subjects.js"></script>
+		<section>
+			<h2>About the picture</h2>
+			<h3>Rendering techniques</h3>
+			<div id="rendering"></div>
+			<h3>Colors</h3>
+			<div id="colorList"></div>
+			<h3>Details</h3>
+			There must be some…
+			<div id="details"></div>
+			<h3>Material</h3>
+			<div id="materials"></div>
+		</section>
 
-	<script src="tools.js"></script>
-	<script src="main.js"></script>
+		<section>
+			<h2>About the ART</h2>
+			<h3>Artists</h3>
+		</section>
+
+
+	</div>
+
+</main>
+
+<footer>By Pierre Matterne | Tested on <a href="https://www.artbreeder.com/">Artbreeder</a></footer>
+
+<!-- Bibliotheques -->
+<script src="bibs/bib_rendering.js"></script>
+<script src="bibs/bib_adj_characters.js"></script>
+<script src="bibs/bib_characters.js"></script>
+<script src="bibs/bib_colors.js"></script>
+<script src="bibs/bib_celebrities.js"></script>
+<script src="bibs/bib_materials.js"></script>
+<script src="bibs/bib_details.js"></script>
+<script src="bibs/bib_phrases.js"></script>
+<script src="bibs/structure_subjects.js"></script>
+
+<script src="tools.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

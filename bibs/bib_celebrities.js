@@ -1,4 +1,4 @@
-BIB_CELEB = {
+const BIB_CELEB = {
 	"Politics": [
 		"Angela Merckel",
 		"Emmanuel Macron",
@@ -41,12 +41,13 @@ BIB_CELEB = {
 		"Cate Blanchett",
 		"Carrie Fisher", 
 		"Billie Piper",
-
 		"Cameron Diaz",
 		"Claudia Black",
 		"Clea DuVall",
 		],
-	"Singer" : [],
+	"Singer" : [
+		"Elvis Presley",
+		],
 	"Singeress" : [
 		"Rihanna",
 		"Marylin Monroe",
@@ -78,7 +79,6 @@ BIB_CELEB = {
 		"Boxxy",
 		]
 };
-
 
 
 

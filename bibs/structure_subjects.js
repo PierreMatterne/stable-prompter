@@ -31,4 +31,22 @@ const SUBJECTS = {
 	"Landscapes": [
 		"Two %character on a roof. In a distance, a %material tower partially masked by the fog."
 		],
+	"Vehicule": [
+		"A car made of %material, exposed in a place.",
+		"A concept drawing of a vegetal hovering vehicule.",
+		"An old rusted iron locomotive, buried under vegetation. Light is working.",
+		],
+	"Objects": [
+		"A %material shield, decorated with a coat of arms, featuring a %animal.",
+		],
+	"Medieval drawing": 
+	[
+		"An illumination depicting a castle or fortress with several towers and battlements.",
+		"An intricate drawing on a page yellowed with age. A knight on horseback, in full armor, holding a lance.",
+		"An illumination in a codex. A woman bath in a bucket. A rabbit watches her.",
+		"A drawing in black ink on a parchment or vellum surface.",
+		"A wood gravure showing soldiers with spears and bows, and a group of people gathered outside the castle gates.",
+		"A copper gravure, depicting a man holding a shield.",
+		"A woodcarving, representing death dancing around a rich couple.",
+		],
 };

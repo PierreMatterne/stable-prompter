@@ -5,13 +5,22 @@ const currentSelectables = {
 	colors : [],
 	materials: [],
 	details: [],
-	celebrities: [],
+	lookalike: [],
 }
+
+/* Where to keep the propositions used to build the text */
+const currentProposition = {};
 
 /* Obtain the main subject */
 const getMainSubject = () => {
 	let getTheChoosenSubjet = getSelectedCheckboxesOfName("subjects");
 	return pickOne(assembleListOfUniqueElements(getTheChoosenSubjet, SUBJECTS));
+}
+
+/* Obtain rendering technique */
+const getRenderingTechniques = () => {
+	let getTheChoosenSubjet = getSelectedCheckboxesOfName("rendering");
+	return assembleListOfUniqueElements(getTheChoosenSubjet, BIB_RENDERING);
 }
 
 /* Concat many array and return one with only unique elements */
@@ -35,7 +44,7 @@ const refresh_all_lists = () => {
 	currentSelectables.adj_chara = getOneFreshListFrom("adj_chara", ADJ_CHARA);
 	currentSelectables.colors = getOneFreshListFrom("colors", BIB_COLORS);
 	currentSelectables.materials = getOneFreshListFrom("materials", BIB_MATERIAL);
-	currentSelectables.celebrities = getOneFreshListFrom("celebrities", BIB_CELEB);
+	currentSelectables.lookalike = getOneFreshListFrom("lookalike", BIB_CELEB);
 	currentSelectables.details = getOneFreshListFrom("details", BIB_DETAILS);
 }
 
@@ -52,17 +61,15 @@ const replacingWords = text => {
 		text = text.replace('%material', pickOne(currentSelectables.materials));
 		text = text.replace('%animal', pickOne(BIB_CHARACTERS["Animals"]));
 		text = text.replace('%plant', pickOne(BIB_CHARACTERS["Plants, Vegetation"]));
-		text = text.replace('%celeb', pickOne(currentSelectables.celebrities));
+		text = text.replace('%celeb', pickOne(currentSelectables.lookalike));
 		text = text.replace('%detail', pickOne(currentSelectables.details));
 
 		//text = text.replace('%hair', getHairStyle());
-		//text = text.replace('%material', pickOne(materials));
 		//text = text.replace('%object', getObject());
 		//text = text.replace('%adj_object', pickOne(adj_objects));
 		//text = text.replace('%place', getPlace());
 		//text = text.replace('%building', pickOne(listBuildings));
 		//text = text.replace('%action', getAction());
-
 		//text = text.replace('%adj_place', pickOne(adj_places));
 		//text = text.replace('%cloth', pickOne(getClothsSet()));
 		
@@ -78,41 +85,48 @@ const replacingWords = text => {
 	return text;
 }
 
-/* WIP ================== WIP */
 
 
 
 
-
-const currentProposition = {
-	subject : null,
-	lookalike : null,
-	details : null,
-};
-
+const refreshTexts = () => {
+	displayText();
+	displayParts();
+}
 
 
 const buildSubject = () => {
 	currentProposition.subject = replacingWords(getMainSubject());
-	displayText();
+	refreshTexts();
 }
 const buildLookalike = () => {
 	currentProposition.lookalike = replacingWords(pickOne(PHRASES_LOOKALIKE));
-	displayText();
+	refreshTexts();
 }
 const buildDetails = () => {
 	currentProposition.details = replacingWords(pickOne(PHRASES_DETAILS));
-	displayText();
+	refreshTexts();
 }
+const buildRendering = () => {
+	currentProposition.rendering = ` Render inspired by ${pickOne(getRenderingTechniques())}.`;
+	refreshTexts();
+}
+
+
+
+
 
 const composeTheFinalText = () => {
 	let html = "";
 	html += currentProposition.subject;
-	if(isCheckBoxChecked("celebrity")){
-		html += currentProposition.lookalike
+	if(isCheckBoxChecked("lookalike")){
+		html += currentProposition.lookalike;
 	};
 	if(isCheckBoxChecked("detail")){
-		html += currentProposition.details
+		html += currentProposition.details;
+	};
+	if(isCheckBoxChecked("renderings")){
+		html += currentProposition.rendering;
 	};
 	return html;
 }
@@ -120,28 +134,30 @@ const composeTheFinalText = () => {
 
 /* Gather information and construct a text */
 const generateNewPrompt = () => {
-	console.clear();
 	log("Generation of a new prompt", "title");
 	let html = "";
-
 	buildSubject();
 	buildLookalike();
 	buildDetails();
-
-	/* TODO getting "ingredients" */
-	/* TODO getting the techniques */
+	buildRendering();
 	/* TODO adding artists */
-	/* TODO adding influences */
+	/* TODO adding cultural influences */
+}
 
-	displayText();
+
+const displayParts = () => {
+	if (!!currentProposition.subject){ placeInDOM(currentProposition.subject, 'onlyChangeSubject') };
+	if (!!currentProposition.lookalike){ placeInDOM(currentProposition.lookalike, 'onlyChangeLookalike') };
+	if (!!currentProposition.details){ placeInDOM(currentProposition.details, 'onlyChangeDetails') };
+	if (!!currentProposition.rendering){ placeInDOM(currentProposition.rendering, 'onlyChangeRendering') }
 }
 
 
 
 const displayText = () => {
+	console.log("Displaying text");
 	html = composeTheFinalText();
 	document.querySelector("#prompt").innerHTML = html;
-	
 	if(isCheckBoxChecked("clipboard")){
 		navigator.clipboard.writeText(html);	
 	}
@@ -150,28 +166,63 @@ const displayText = () => {
 
 
 
-/* WIP ================== WIP */
 
+/* PREPARATION OF PART BUTTONS : they must listen to click event */
+const configPartButtons = [
+	{id: "#onlyChangeSubject", callback: buildSubject},
+	{id: "#onlyChangeLookalike", callback: buildLookalike},
+	{id: "#onlyChangeDetails", callback: buildDetails},
+	{id: "#onlyChangeRendering", callback: buildRendering},
+	];
 
+const preparePartsButtons = () => {
+	for (item of configPartButtons){
+		document.querySelector(item.id).addEventListener('click', item.callback);
+	}
+}
 
-const prepareAllCheckboxesList = () => {
+/* PREPARATION OF CHECKBOXES LISTS */
+const prepareAllCheckboxesLists = () => {
 	prepareCheckboxes("#charaAdjCheckboxes", ADJ_CHARA, "adj_chara");
 	prepareCheckboxes("#subjectsList", SUBJECTS, "subjects");
 	prepareCheckboxes("#colorList", BIB_COLORS, "colors");
 	prepareCheckboxes("#characters", BIB_CHARACTERS, "characters");
 	prepareCheckboxes("#materials", BIB_MATERIAL, "materials");
-	prepareCheckboxes("#celebrities", BIB_CELEB, "celebrities");
+	prepareCheckboxes("#lookalikes", BIB_CELEB, "lookalike");
 	prepareCheckboxes("#details", BIB_DETAILS, "details");
+	prepareCheckboxes("#rendering", BIB_RENDERING, "rendering");
 }
 
 
+
+
+
+/* Show or hide unused parts buttons */
+const toggleButtons = () => {
+	/* TODO logic */
+	/* check all ingredients checkboxes */
+	/* for those checked, give the active class to the corresponding part button */
+	/* the other should have a display: none; */
+}
+
+
+const prepareAllIngredientsButtons = () => {
+	let allIngredientsCheckboxes = document.querySelectorAll("input[name=ingredients]");
+	for(elem of allIngredientsCheckboxes){
+		elem.addEventListener('click', toggleButtons);
+	}
+}
+
+const prepareGenerateButton = () => {
+	document.querySelector("#btnGenPrompt").addEventListener('click', generateNewPrompt);
+}
+
 /* Prepare the HTML for it to be usable */
 const init = () => {
-	/* Setting "Generate" button */
-	let buttonGeneratePrompt = document.querySelector("#btnGenPrompt");
-	buttonGeneratePrompt.addEventListener('click', generateNewPrompt);
-
-	prepareAllCheckboxesList();
+	prepareGenerateButton();
+	prepareAllIngredientsButtons();
+	prepareAllCheckboxesLists();
+	preparePartsButtons();
 }
 
 init();

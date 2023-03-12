@@ -1,6 +1,7 @@
 const PHRASES_LOOKALIKE = [
 	" The main character resembles %celeb.",
-	" The main character looks alike %celeb.",
+	" The main character looks like %celeb.",
+	" played by %celeb.",
 	" They are %celeb lookalikes.",
 	];
 
