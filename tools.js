@@ -30,9 +30,6 @@ const pickOne = list => {
 
 /* Construct a checkboxes list and place it in HTML */
 const prepareCheckboxes = (targetId, list, name) => {
-	log(targetId);
-	log(list);
-	log(name);
 	let target = document.querySelector(targetId);
 	let listeAdjCategories = listKeysOfObjects(list);
 	let html = "";

@@ -80,42 +80,6 @@ A portrait of a %adj_chara %character in a %adj_chara setting.
 A portrait of a %adj_chara %character with %adj_chara features, in a %adj_chara setting.
 A scene featuring a %adj_chara %character in a %adj_chara environment.
 
----------------------------------------------
-ADDITIONAL FEATURES
----------------------------------------------
-featuring [adjective 3] [natural feature] and [adjective 4] [natural feature 2].
-The image should feature [adjective 3] [noun 2].
-with [adjective 2] details and [adjective 3] features. 
-with [adjective 2] features and [adjective 3] details.
-with [adjective 3] [natural feature 2] in the foreground. 
-with [adjective 3] [natural feature] in the distance. 
 
 
----------------------------------------------
-TECHNIQUES
----------------------------------------------
-The image should highlight its [technique] features.
-The image should showcase its [technique] qualities.
-with a focus on [adjective 3] use of [technique].
-
-let techniques = ["lighting", "color", color and texture", "light and shadow", "atmospheric effects"];
-
------------------------------------------
-INSPIRATION FROM
------------------------------------------
-Draw inspiration from architectural designs by [architect 1], [architect 2], 
-Draw inspiration from artists like [artist 1], [artist 2], and [artist 3], 
-Draw inspiration from artists such as [artist 1], [artist 2], and [artist 3], 
-Draw inspiration from designs by [designer 1], [designer 2], and [designer 3], 
-Look to artists like [artist 1], [artist 2], and [artist 3] for inspiration, 
------------------------------------------------
-INFLUENCE
------------------------------------------
-It aim to capture the essence of [influence].
-It aim to capture the feeling of [influence].
-It is a representation of [influence].
-The [subject] is a representation of [influence].
-It is under the influence of [influence].
-It has been influenced by [influence].
-Influenced by [influence].
 */

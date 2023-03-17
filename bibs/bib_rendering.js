@@ -1,3 +1,16 @@
+const STRUCT_RENDERING = [
+	"Render the image in a %technique style.",
+	"Render the image in a %technique style with a focus on lighting.",
+	"Render the image in a %technique style with attention to textures.",
+	"Rendered in a %technique style with great attention to detail.",
+	"Rendered in an hybrid technique of %technique and %technique.",
+	"Rendered as %technique.",
+	"Rendered with caracteristics of %technique and %technique.",
+	"The image should highlight its %technique features.",
+	"The image should showcase its %technique qualities.",
+	"with a focus on use of %technique.",
+	];
+
 const BIB_RENDERING = {
 	"Architecture" : [	
 		"Ionic",
@@ -590,6 +603,16 @@ const BIB_RENDERING = {
 		"chalk art",
 		],
 
+	"Material": [
+		"etched metal",
+		"etched stone",
+		"glass",
+		"marbling",
+		"metallic",
+		"Yosegi",
+		"pyrography",
+		],
+
 	"Unclassed" : [
 		"4k",
 		"Nvidia RTX",
@@ -648,8 +671,6 @@ const BIB_RENDERING = {
 		"enlightenment",
 		"enso",
 		"Eraserhead",
-		"etched metal",
-		"etched stone",
 		"ethereal",
 		"evil",
 		"excited",
@@ -675,7 +696,6 @@ const BIB_RENDERING = {
 		"tyftt",
 		"futuristic",
 		"glamour shot",
-		"glass",
 		"glow in the dark",
 		"gold leaf",
 		"goth",
@@ -727,7 +747,6 @@ const BIB_RENDERING = {
 		"macabre fine art",
 		"macabre",
 		"manga",
-		"marbling",
 		"mariachi",
 		"massurrealism",
 		"masterpiece",
@@ -739,7 +758,6 @@ const BIB_RENDERING = {
 		"Mesoamerican",
 		"Mesozoic",
 		"messy",
-		"metallic",
 		"microscopic",
 		"Minecraft",
 		"minimalism",
@@ -839,18 +857,7 @@ const BIB_RENDERING = {
 		"YouTube",
 		"zoetrope",
 		"zoomed out",
-		"yosegi", /* marqueterie à motifs */
 		],
-
 };
 
 
-const STRUCT_RENDERING = [
-	"Render the image in a %technique style.",
-	"Render the image in a %technique style with a focus on lighting.",
-	"Render the image in a %technique style with attention to textures.",
-	"Rendered in a %technique style with great attention to detail.",
-	"Rendered in an hybrid technique of %technique and %technique.",
-	"Rendered as %technique.",
-	"Rendered with caracteristics of %technique and %technique.",
-	];

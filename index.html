@@ -26,11 +26,14 @@
 					<input type="checkbox" name="ingredients" id="lookalike">
 					<label for="ingredients">Celebrity</label><br>
 
-					<input type="checkbox" name="ingredients" id="detail">
-					<label for="ingredients">Details</label><br>
+					<input type="checkbox" name="ingredients" id="features">
+					<label for="ingredients">Features</label><br>
 
 					<input type="checkbox" name="ingredients" id="renderings">
 					<label for="renderings">Renderings techniques</label><br>
+
+					<input type="checkbox" name="ingredients" id="inspirationsource">
+					<label for="inspirationsource">A source of inspiration</label><br>
 
 					<!-- 
 											How many : 
@@ -52,8 +55,9 @@
 			<div id="parts" class="parts">
 				<button id="onlyChangeSubject"></button>
 				<button id="onlyChangeLookalike"></button>
-				<button id="onlyChangeDetails"></button>
+				<button id="onlyChangeFeatures"></button>
 				<button id="onlyChangeRendering"></button>
+				<button id="onlyChangeInspiration"></button>
 			</div>
 
 			<hr>
@@ -85,15 +89,17 @@
 			<div id="techniques"></div>
 			<h3>Colors</h3>
 			<div id="colorList"></div>
-			<h3>Details</h3>
+			<h3>Features</h3>
 			There must be some…
-			<div id="details"></div>
+			<div id="features"></div>
 			<h3>Material</h3>
 			<div id="materials"></div>
 		</section>
 
 		<section>
 			<h2>About the ART</h2>
+			<h3>Sources of inspiration</h3>
+			<div id="inspiration"></div>
 			<h3>Artists</h3>
 		</section>
 
@@ -105,16 +111,17 @@
 <footer>By Pierre Matterne | Tested on <a href="https://www.artbreeder.com/">Artbreeder</a></footer>
 
 <!-- Bibliotheques -->
-<script src="bibs/bib_rendering.js"></script>
 <script src="bibs/bib_adj_characters.js"></script>
-<script src="bibs/bib_characters.js"></script>
-<script src="bibs/bib_colors.js"></script>
-<script src="bibs/bib_objects.js"></script>
 <script src="bibs/bib_buildings.js"></script>
 <script src="bibs/bib_celebrities.js"></script>
+<script src="bibs/bib_characters.js"></script>
+<script src="bibs/bib_colors.js"></script>
+<script src="bibs/bib_features.js"></script>
+<script src="bibs/bib_inspiration.js"></script>
 <script src="bibs/bib_materials.js"></script>
-<script src="bibs/bib_details.js"></script>
+<script src="bibs/bib_objects.js"></script>
 <script src="bibs/bib_phrases.js"></script>
+<script src="bibs/bib_rendering.js"></script>
 <script src="bibs/structure_subjects.js"></script>
 
 <script src="tools.js"></script>

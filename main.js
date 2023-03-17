@@ -5,17 +5,19 @@ const currentSelectables = {};
 const currentProposition = {};
 
 /* OBTAIN A STRUCTURE FOR WORDS */
-/* Obtain the main subject */
 const getMainSubject = () => {
 	let getTheChoosenSubjet = getSelectedCheckboxesOfName("subjects");
 	return pickOne(assembleListOfUniqueElements(getTheChoosenSubjet, SUBJECTS));
 }
-
-/* Obtain rendering technique */
 const getRenderingTechniques = () => {
 	return pickOne(STRUCT_RENDERING);
 }
-
+const getFeatures = () => {
+	return pickOne(STRUCT_FEATURES);
+}
+const getInspirationSources = () => {
+	return pickOne(STRUCT_INSPIRATION);
+}
 
 
 
@@ -42,10 +44,11 @@ const configSelectables = [
 	{name: "colors", bib: BIB_COLORS},
 	{name: "materials", bib: BIB_MATERIAL},
 	{name: "lookalike", bib: BIB_CELEB},
-	{name: "details", bib: BIB_DETAILS},
+	{name: "features", bib: BIB_FEATURES},
 	{name: "buildings", bib: BIB_BUILDINGS},
 	{name: "objects", bib: BIB_OBJECTS},
 	{name: "techniques", bib: BIB_RENDERING},
+	{name: "inspiration", bib: BIB_INSPIRATION},
 	];
 
 
@@ -70,10 +73,11 @@ const replacingWords = text => {
 		text = text.replace('%animal', pickOne(BIB_CHARACTERS["Animals"]));
 		text = text.replace('%plant', pickOne(BIB_CHARACTERS["Plants, Vegetation"]));
 		text = text.replace('%celeb', pickOne(currentSelectables.lookalike));
-		text = text.replace('%detail', pickOne(currentSelectables.details));
+		text = text.replace('%feature', pickOne(currentSelectables.features));
 		text = text.replace('%building', pickOne(currentSelectables.buildings));
 		text = text.replace('%object', pickOne(currentSelectables.objects));
 		text = text.replace('%technique', pickOne(currentSelectables.techniques));
+		text = text.replace('%inspiration', pickOne(currentSelectables.inspiration));
 
 		//text = text.replace('%hair', getHairStyle());
 		//text = text.replace('%adj_object', pickOne(adj_objects));
@@ -105,36 +109,43 @@ const buildSubject = () => {
 	refreshTexts();
 }
 const buildLookalike = () => {
-	currentProposition.lookalike = replacingWords(pickOne(PHRASES_LOOKALIKE));
+	currentProposition.lookalike = " " + replacingWords(pickOne(PHRASES_LOOKALIKE));
 	refreshTexts();
 }
-const buildDetails = () => {
-	currentProposition.details = replacingWords(pickOne(PHRASES_DETAILS));
+const buildFeatures = () => {
+	currentProposition.features = " " + replacingWords(getFeatures());
 	refreshTexts();
 }
 const buildRendering = () => {
 	currentProposition.rendering = " " + replacingWords(getRenderingTechniques());
 	refreshTexts();
 }
+const buildInspiration = () => {
+	currentProposition.inspiration = " " + replacingWords(getInspirationSources());
+	refreshTexts();
+}
 
 
-
-
-
+/* ADD CHECKBOXES FOR COMPOSITION INGREDIENTS */
+const configCategoryCheckboxes = [
+	{boxId: "lookalike", propositionName: "lookalike"},
+	{boxId: "features", propositionName: "features"},
+	{boxId: "renderings", propositionName: "rendering"},
+	{boxId: "inspirationsource", propositionName: "inspiration"},
+	];
 const composeTheFinalText = () => {
 	let html = "";
 	html += currentProposition.subject;
-	if(isCheckBoxChecked("lookalike")){
-		html += currentProposition.lookalike;
-	};
-	if(isCheckBoxChecked("detail")){
-		html += currentProposition.details;
-	};
-	if(isCheckBoxChecked("renderings")){
-		html += currentProposition.rendering;
-	};
+	configCategoryCheckboxes.forEach(cbox => {
+		if(isCheckBoxChecked(cbox.boxId)){
+			html += currentProposition[cbox.propositionName];
+		}
+	});
 	return html;
 }
+
+
+
 
 
 /* Gather information and construct a text */
@@ -143,18 +154,19 @@ const generateNewPrompt = () => {
 	let html = "";
 	buildSubject();
 	buildLookalike();
-	buildDetails();
+	buildFeatures();
 	buildRendering();
+	buildInspiration();
 	/* TODO adding artists */
-	/* TODO adding cultural influences */
 }
 
 
 const displayParts = () => {
 	if (!!currentProposition.subject){ placeInDOM(currentProposition.subject, 'onlyChangeSubject') };
 	if (!!currentProposition.lookalike){ placeInDOM(currentProposition.lookalike, 'onlyChangeLookalike') };
-	if (!!currentProposition.details){ placeInDOM(currentProposition.details, 'onlyChangeDetails') };
-	if (!!currentProposition.rendering){ placeInDOM(currentProposition.rendering, 'onlyChangeRendering') }
+	if (!!currentProposition.features){ placeInDOM(currentProposition.features, 'onlyChangeFeatures') };
+	if (!!currentProposition.rendering){ placeInDOM(currentProposition.rendering, 'onlyChangeRendering') };
+	if (!!currentProposition.rendering){ placeInDOM(currentProposition.inspiration, 'onlyChangeInspiration') };
 }
 
 
@@ -176,8 +188,9 @@ const displayText = () => {
 const configPartButtons = [
 	{id: "#onlyChangeSubject", callback: buildSubject},
 	{id: "#onlyChangeLookalike", callback: buildLookalike},
-	{id: "#onlyChangeDetails", callback: buildDetails},
+	{id: "#onlyChangeFeatures", callback: buildFeatures},
 	{id: "#onlyChangeRendering", callback: buildRendering},
+	{id: "#onlyChangeInspiration", callback: buildInspiration},
 	];
 
 const preparePartsButtons = () => {
@@ -194,10 +207,11 @@ const prepareAllCheckboxesLists = () => {
 	prepareCheckboxes("#characters", BIB_CHARACTERS, "characters");
 	prepareCheckboxes("#materials", BIB_MATERIAL, "materials");
 	prepareCheckboxes("#lookalikes", BIB_CELEB, "lookalike");
-	prepareCheckboxes("#details", BIB_DETAILS, "details");
+	prepareCheckboxes("#features", BIB_FEATURES, "features");
 	prepareCheckboxes("#techniques", BIB_RENDERING, "techniques");
 	prepareCheckboxes("#buildings", BIB_BUILDINGS, "buildings");
 	prepareCheckboxes("#objects", BIB_OBJECTS, "objects");
+	prepareCheckboxes("#inspiration", BIB_INSPIRATION, "inspiration");
 }
 
 
@@ -233,4 +247,4 @@ const init = () => {
 }
 
 init();
-generateNewPrompt();
+// generateNewPrompt();
