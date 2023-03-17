@@ -843,3 +843,14 @@ const BIB_RENDERING = {
 		],
 
 };
+
+
+const STRUCT_RENDERING = [
+	"Render the image in a %technique style.",
+	"Render the image in a %technique style with a focus on lighting.",
+	"Render the image in a %technique style with attention to textures.",
+	"Rendered in a %technique style with great attention to detail.",
+	"Rendered in an hybrid technique of %technique and %technique.",
+	"Rendered as %technique.",
+	"Rendered with caracteristics of %technique and %technique.",
+	];

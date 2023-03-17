@@ -30,7 +30,6 @@ const pickOne = list => {
 
 /* Construct a checkboxes list and place it in HTML */
 const prepareCheckboxes = (targetId, list, name) => {
-	console.log("------------------------");
 	log(targetId);
 	log(list);
 	log(name);

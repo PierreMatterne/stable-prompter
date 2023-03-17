@@ -1,16 +1,10 @@
 /* The made-on-the-spot list of pickable elements */
-const currentSelectables = {
-	characters: [],
-	adj_chara: [],
-	colors : [],
-	materials: [],
-	details: [],
-	lookalike: [],
-}
+const currentSelectables = {};
 
 /* Where to keep the propositions used to build the text */
 const currentProposition = {};
 
+/* OBTAIN A STRUCTURE FOR WORDS */
 /* Obtain the main subject */
 const getMainSubject = () => {
 	let getTheChoosenSubjet = getSelectedCheckboxesOfName("subjects");
@@ -19,9 +13,12 @@ const getMainSubject = () => {
 
 /* Obtain rendering technique */
 const getRenderingTechniques = () => {
-	let getTheChoosenSubjet = getSelectedCheckboxesOfName("rendering");
-	return assembleListOfUniqueElements(getTheChoosenSubjet, BIB_RENDERING);
+	return pickOne(STRUCT_RENDERING);
 }
+
+
+
+
 
 /* Concat many array and return one with only unique elements */
 const assembleListOfUniqueElements = (selectedCategories, sourceList) => {
@@ -48,7 +45,9 @@ const configSelectables = [
 	{name: "details", bib: BIB_DETAILS},
 	{name: "buildings", bib: BIB_BUILDINGS},
 	{name: "objects", bib: BIB_OBJECTS},
+	{name: "techniques", bib: BIB_RENDERING},
 	];
+
 
 /* Refresh list taking checked checkbox into account */
 const refresh_all_lists = () => {
@@ -57,9 +56,9 @@ const refresh_all_lists = () => {
 	}
 }
 
+/* Replace marker by real words picked at random in a selection */
 const replacingWords = text => {
 	refresh_all_lists();
-
 	console.time('replacer');
 	let loop = 0;
 	while(!!text && text.includes('%') && loop <= 300){
@@ -74,6 +73,7 @@ const replacingWords = text => {
 		text = text.replace('%detail', pickOne(currentSelectables.details));
 		text = text.replace('%building', pickOne(currentSelectables.buildings));
 		text = text.replace('%object', pickOne(currentSelectables.objects));
+		text = text.replace('%technique', pickOne(currentSelectables.techniques));
 
 		//text = text.replace('%hair', getHairStyle());
 		//text = text.replace('%adj_object', pickOne(adj_objects));
@@ -81,7 +81,7 @@ const replacingWords = text => {
 		//text = text.replace('%action', getAction());
 		//text = text.replace('%adj_place', pickOne(adj_places));
 		//text = text.replace('%cloth', pickOne(getClothsSet()));
-		
+
 		loop++; // failsafe
 		if(loop >=300){
 			console.log("A %word is probably misspelled => infinite loop");
@@ -95,14 +95,10 @@ const replacingWords = text => {
 }
 
 
-
-
-
 const refreshTexts = () => {
 	displayText();
 	displayParts();
 }
-
 
 const buildSubject = () => {
 	currentProposition.subject = replacingWords(getMainSubject());
@@ -117,7 +113,7 @@ const buildDetails = () => {
 	refreshTexts();
 }
 const buildRendering = () => {
-	currentProposition.rendering = ` Render inspired by ${pickOne(getRenderingTechniques())}.`;
+	currentProposition.rendering = " " + replacingWords(getRenderingTechniques());
 	refreshTexts();
 }
 
@@ -199,7 +195,7 @@ const prepareAllCheckboxesLists = () => {
 	prepareCheckboxes("#materials", BIB_MATERIAL, "materials");
 	prepareCheckboxes("#lookalikes", BIB_CELEB, "lookalike");
 	prepareCheckboxes("#details", BIB_DETAILS, "details");
-	prepareCheckboxes("#rendering", BIB_RENDERING, "rendering");
+	prepareCheckboxes("#techniques", BIB_RENDERING, "techniques");
 	prepareCheckboxes("#buildings", BIB_BUILDINGS, "buildings");
 	prepareCheckboxes("#objects", BIB_OBJECTS, "objects");
 }

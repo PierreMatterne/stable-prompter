@@ -90,13 +90,6 @@ with [adjective 2] features and [adjective 3] details.
 with [adjective 3] [natural feature 2] in the foreground. 
 with [adjective 3] [natural feature] in the distance. 
 
----------------------------------------------
-RENDERING
----------------------------------------------
-Render the image in a [adjective 4] style.
-Render the image in a [adjective 4] style with a focus on lighting. 
-Render the image in a [adjective 5] style with attention to textures. 
-Rendered in a [adjective 2] style with attention to detail.
 
 ---------------------------------------------
 TECHNIQUES
