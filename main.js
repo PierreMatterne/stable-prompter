@@ -78,11 +78,11 @@ const replacingWords = text => {
 		text = text.replace('%object', pickOne(currentSelectables.objects));
 		text = text.replace('%technique', pickOne(currentSelectables.techniques));
 		text = text.replace('%inspiration', pickOne(currentSelectables.inspiration));
+		text = text.replace('%action', pickOne(BIB_ACTIONS));
 
 		//text = text.replace('%hair', getHairStyle());
 		//text = text.replace('%adj_object', pickOne(adj_objects));
 		//text = text.replace('%place', getPlace());
-		//text = text.replace('%action', getAction());
 		//text = text.replace('%adj_place', pickOne(adj_places));
 		//text = text.replace('%cloth', pickOne(getClothsSet()));
 
