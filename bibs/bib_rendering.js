@@ -8,7 +8,7 @@ const STRUCT_RENDERING = [
 	"Rendered with caracteristics of %technique and %technique.",
 	"The image should highlight its %technique features.",
 	"The image should showcase its %technique qualities.",
-	"with a focus on use of %technique.",
+	"With a focus on use of %technique.",
 	];
 
 const BIB_RENDERING = {

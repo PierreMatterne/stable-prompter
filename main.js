@@ -49,6 +49,11 @@ const configSelectables = [
 	{name: "objects", bib: BIB_OBJECTS},
 	{name: "techniques", bib: BIB_RENDERING},
 	{name: "inspiration", bib: BIB_INSPIRATION},
+	{name: "adj_objects", bib: ADJ_OBJECTS},
+	{name: "places", bib: BIB_PLACES},
+	{name: "adj_places", bib: ADJ_PLACES},
+	{name: "hairs", bib: BIB_HAIRS},
+	{name: "cloths", bib: BIB_CLOTHS},
 	];
 
 
@@ -79,12 +84,13 @@ const replacingWords = text => {
 		text = text.replace('%technique', pickOne(currentSelectables.techniques));
 		text = text.replace('%inspiration', pickOne(currentSelectables.inspiration));
 		text = text.replace('%action', pickOne(BIB_ACTIONS));
-
-		//text = text.replace('%hair', getHairStyle());
-		//text = text.replace('%adj_object', pickOne(adj_objects));
-		//text = text.replace('%place', getPlace());
-		//text = text.replace('%adj_place', pickOne(adj_places));
-		//text = text.replace('%cloth', pickOne(getClothsSet()));
+		text = text.replace('%adj_object', pickOne(currentSelectables.adj_objects));
+		text = text.replace('%adj_place', pickOne(currentSelectables.adj_places));
+		text = text.replace('%nameplace', pickOne(BIB_PLACENAMES));
+		text = text.replace('%place', pickOne(currentSelectables.places));
+		text = text.replace('%landmark', pickOne(BIB_LANDMARKS));
+		text = text.replace('%hair', pickOne(currentSelectables.hairs));
+		text = text.replace('%cloth', pickOne(currentSelectables.cloths));
 
 		loop++; // failsafe
 		if(loop >=300){
@@ -210,8 +216,13 @@ const prepareAllCheckboxesLists = () => {
 	prepareCheckboxes("#features", BIB_FEATURES, "features");
 	prepareCheckboxes("#techniques", BIB_RENDERING, "techniques");
 	prepareCheckboxes("#buildings", BIB_BUILDINGS, "buildings");
-	prepareCheckboxes("#objects", BIB_OBJECTS, "objects");
 	prepareCheckboxes("#inspiration", BIB_INSPIRATION, "inspiration");
+	prepareCheckboxes("#objects", BIB_OBJECTS, "objects");
+	prepareCheckboxes("#adjobjects", ADJ_OBJECTS, "adj_objects");
+	prepareCheckboxes("#places", BIB_PLACES, "places");
+	prepareCheckboxes("#adjplaces", ADJ_PLACES, "adj_places");
+	prepareCheckboxes("#hairs", BIB_HAIRS, "hairs");
+	prepareCheckboxes("#cloths", BIB_CLOTHS, "cloth");
 }
 
 
