@@ -229,7 +229,9 @@ const displayParts = () => {
 	document.querySelector("#onlyChangeInspiration").classList.toggle('hidden', !isCheckBoxChecked("inspirationsource"));
 	if (!!currentProposition.inspiration){ placeInDOM(currentProposition.inspiration, 'onlyChangeInspiration') };
 	/* STYLE OF AN ARTIST */
-	document.querySelector("#onlyChangeArtists").classList.toggle('hidden', parseInt(document.querySelector('#artistssource').value) === 0);
+	let conditionsForArtistsStuffToShow = parseInt(document.querySelector('#artistssource').value) === 0;
+	document.querySelector("#onlyChangeArtists").classList.toggle('hidden', conditionsForArtistsStuffToShow);
+	document.querySelector("#link_artists").classList.toggle('hidden', conditionsForArtistsStuffToShow);
 	if (!!currentProposition.artists){ 
 		placeInDOM(currentProposition.artists, 'onlyChangeArtists');
 	};
