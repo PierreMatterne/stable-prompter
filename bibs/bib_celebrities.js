@@ -1,3 +1,11 @@
+const PHRASES_LOOKALIKE = [
+	"The main character resembles %celeb.",
+	"The main character looks like %celeb.",
+	"Played by %celeb.",
+	"They are %celeb lookalikes.",
+	"In the likeness of %celeb.",
+	];
+
 const BIB_CELEB = {
 	"Politics": [
 		"Angela Merckel",

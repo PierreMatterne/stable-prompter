@@ -35,117 +35,126 @@
 					<input type="checkbox" name="ingredients" id="inspirationsource">
 					<label for="inspirationsource">A source of inspiration</label><br>
 
-					<!-- 
-											How many : 
-					<input type="range" min="1" max="3" value="1">
-				-->
-			</div>
+					<!-- WIP ARTISTS -->
+					<label for="artistssource">How many artists names</label>					
+					<input type="range" min="0" max="5" value="0" id="artistssource">
+					<span id="rangeValue">0</span>
+					<!-- WIP END -->
+				</div>
 
 
-			<hr>
-			Something like this?
-			<br><br>
-			<div id="prompt" class="zonePrompt"></div>
-			<label for="clipboard">Auto-copy to clipboard</label>
-			<input type="checkbox" name="clipboard" id="clipboard">
-			<hr>
-			<button id="btnGenPrompt">Another</button>
-			<hr>
-			<!-- Buttons with parts. When click, replace only that part -->
-			<div id="parts" class="parts">
-				<button id="onlyChangeSubject"></button>
-				<button id="onlyChangeLookalike"></button>
-				<button id="onlyChangeFeatures"></button>
-				<button id="onlyChangeRendering"></button>
-				<button id="onlyChangeInspiration"></button>
-			</div>
+				<hr>
+				Something like this?
+				<br><br>
+				<div id="prompt" class="zonePrompt"></div>
+				<label for="clipboard">Auto-copy to clipboard</label>
+				<input type="checkbox" name="clipboard" id="clipboard">
+				<hr>
+				<button id="btnGenPrompt">Another</button>
+				<hr>
+				<!-- Buttons with parts. When click, replace only that part -->
+				Click on a button to modify only this part.
+				<div id="parts" class="parts">
+					<button id="onlyChangeSubject"></button>
+					<button id="onlyChangeLookalike" class="hidden"></button>
+					<button id="onlyChangeFeatures" class="hidden"></button>
+					<button id="onlyChangeRendering" class="hidden"></button>
+					<button id="onlyChangeInspiration" class="hidden"></button>
+					<button id="onlyChangeArtists" class="hidden"></button>
+				</div>
 
-			<hr>
-			<h2>Lorem Ipsum</h2>
-			<p>If you don't select anything in the right lists, all option are availables.</p>
-			<p>Selecting a category restrict the random selection to a word of these themes.</p>
-		</section>
+				<hr>
 
-		<section>
-			<h2>About the character (if any)</h2>
-			<h3>Kind of characters</h3>
-			<div id="characters"></div>
-			<h3>Caracteristics</h3>
-			<div id="charaAdjCheckboxes"></div>
-			<h3>Likeness</h3>
-			The main character looks like…
-			<div id="lookalikes"></div>
-			<h3>Hair</h3>
-			<div id="hairs"></div>
-			<h3>Cloths</h3>
-			<div id="cloths"></div>
-		</section>
-		<section>
-			<h3>If it's a building…</h3>
-			<div id="buildings"></div>
-		</section>
-		<section>
-			<h3>If it's an object, it's…</h3>
-			<div id="objects"></div>
-			<h3>…and it should be…</h3>
-			<div id="adjobjects"></div>
-		</section>
-		<section>
-			<h3>About places…</h3>
-			<div id="places"></div>
-			<hr>
-			<div id="adjplaces"></div>
-		</section>
+				About the artists : 
+				<div id="searchlinks"></div>
 
-		<section>
-			<h2>About the picture</h2>
-			<h3>Rendering techniques</h3>
-			<div id="techniques"></div>
-			<h3>Colors</h3>
-			<div id="colorList"></div>
-			<h3>Features</h3>
-			There must be some…
-			<div id="features"></div>
-			<h3>Material</h3>
-			<div id="materials"></div>
-		</section>
+				<h2>Lorem Ipsum</h2>
+				<p>If you don't select anything in the right lists, all option are availables.</p>
+				<p>Selecting a category restrict the random selection to a word of these themes.</p>
+			</section>
 
-		<section>
-			<h2>About the ART</h2>
-			<h3>Sources of inspiration</h3>
-			<div id="inspiration"></div>
-			<h3>Artists</h3>
-		</section>
+			<section class="col2">
+				<h2>About the character (if any)</h2>
+				<h3>Kind of characters</h3>
+				<div id="characters"></div>
+				<h3>Caracteristics</h3>
+				<div id="charaAdjCheckboxes"></div>
+				<h3>Likeness</h3>
+				The main character looks like…
+				<div id="lookalikes"></div>
+				<h3>Hair</h3>
+				<div id="hairs"></div>
+				<h3>Cloths</h3>
+				<div id="cloths"></div>
+			</section>
+
+			<section class="col2">
+				<h3>If it's a building…</h3>
+				<div id="buildings"></div>
+
+				<h3>If it's an object, it's…</h3>
+				<div id="objects"></div>
+				<h3>…and it should be…</h3>
+				<div id="adjobjects"></div>
+
+				<h3>About places…</h3>
+				<h4>Name</h4>
+				<div id="places"></div>
+				<h4>Ambiance</h4>
+				<div id="adjplaces"></div>
+			</section>
+
+			<section class="col2">
+				<h2>About the picture</h2>
+				<h3>Rendering techniques</h3>
+				<div id="techniques"></div>
+				<h3>Colors</h3>
+				<div id="colorList"></div>
+				<h3>Features</h3>
+				There must be some…
+				<div id="featureslist"></div>
+				<h3>Material</h3>
+				<div id="materials"></div>
+			</section>
+
+			<section class="col2">
+				<h2>About the ART</h2>
+				<h3>Sources of inspiration</h3>
+				<div id="inspiration"></div>
+				<h3>Artists</h3>
+				<div id="artistlist"></div>
+			</section>
 
 
-	</div>
+		</div>
 
-</main>
+	</main>
 
-<footer>By Pierre Matterne | Tested on <a href="https://www.artbreeder.com/">Artbreeder</a></footer>
+	<footer>By Pierre Matterne | Tested on <a href="https://www.artbreeder.com/">Artbreeder</a></footer>
 
-<!-- Bibliotheques -->
-<script src="bibs/bib_actions.js"></script>
-<script src="bibs/bib_adj_characters.js"></script>
-<script src="bibs/bib_characters.js"></script>
-<script src="bibs/bib_adj_objects.js"></script>
-<script src="bibs/bib_objects.js"></script>
-<script src="bibs/bib_adj_places.js"></script>
-<script src="bibs/bib_places.js"></script>
-<script src="bibs/bib_buildings.js"></script>
-<script src="bibs/bib_celebrities.js"></script>
-<script src="bibs/bib_colors.js"></script>
-<script src="bibs/bib_hairs.js"></script>
-<script src="bibs/bib_cloths.js"></script>
-<script src="bibs/bib_features.js"></script>
-<script src="bibs/bib_inspiration.js"></script>
-<script src="bibs/bib_materials.js"></script>
-<script src="bibs/bib_phrases.js"></script>
-<script src="bibs/bib_rendering.js"></script>
-<script src="bibs/structure_subjects.js"></script>
+	<!-- Bibliotheques -->
+	<script src="bibs/glossary.js"></script>
+	<script src="bibs/bib_actions.js"></script>
+	<script src="bibs/bib_adj_characters.js"></script>
+	<script src="bibs/bib_characters.js"></script>
+	<script src="bibs/bib_adj_objects.js"></script>
+	<script src="bibs/bib_objects.js"></script>
+	<script src="bibs/bib_adj_places.js"></script>
+	<script src="bibs/bib_places.js"></script>
+	<script src="bibs/bib_buildings.js"></script>
+	<script src="bibs/bib_celebrities.js"></script>
+	<script src="bibs/bib_colors.js"></script>
+	<script src="bibs/bib_hairs.js"></script>
+	<script src="bibs/bib_cloths.js"></script>
+	<script src="bibs/bib_features.js"></script>
+	<script src="bibs/bib_inspiration.js"></script>
+	<script src="bibs/bib_materials.js"></script>
+	<script src="bibs/bib_rendering.js"></script>
+	<script src="bibs/bib_artists.js"></script>
+	<script src="bibs/structure_subjects.js"></script>
 
-<script src="tools.js"></script>
-<script src="main.js"></script>
+	<script src="tools.js"></script>
+	<script src="main.js"></script>
 </body>
 </html>
 
