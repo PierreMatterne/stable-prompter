@@ -17,4 +17,4 @@ With the Stable-Prompter Generator, users can easily generate unique and creativ
 
 ## Tech
 
-For this project, I used code that can run locally without server, vue.js or even nodes.js.
+For this project, I used code that can run locally without server, vue.js or even nodes.js. So you can download it, and double-click on index.html, and voilà! it works.
