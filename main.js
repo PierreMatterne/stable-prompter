@@ -69,22 +69,48 @@ const refresh_all_lists = () => {
 }
 
 
+
+const specialCasesConfig = [
+	{idCheckbox: "excludeUnknown", keyInList: "isKnown"},
+	{idCheckbox: "includeVIP", keyInList: "vip"},
+	];
+
+
+const getListCleanedOfSpecialCases = () => {
+	let cleanedList = BIB_ARTISTS;
+	specialCasesConfig.forEach(specialCase => {
+		if(isCheckBoxChecked(specialCase.idCheckbox)){
+			cleanedList = cleanedList.filter(artist => artist[specialCase.keyInList]);
+		}
+	});
+	return cleanedList;
+}
+
+
+
 const getListOfSelectableArtists = (number) => {
 	let requestedArtistCategory = getDetailsOfCheckboxesForSerie("chooseArtists"); 
 	giveAllArtistsFirstCotation(BIB_ARTISTS);
 
-	/* TODO Exclude non-vip or unknow by ArtBreeder */
+
+
+	let cleanedArtistsList = getListCleanedOfSpecialCases();
+
+
+
+
+
 
 	let finalArtistNameList = [];
 	if(requestedArtistCategory.checkedList.length === 0){
-		BIB_ARTISTS.forEach(artist => {
+		cleanedArtistsList.forEach(artist => {
 			finalArtistNameList.push(artist.name);
 		})
 	}else{
 		attributeMorePoints(requestedArtistCategory.checkedList);
 		/* Get the best from witch randomly pick */
 		limitForRandomPicking = 20;
-		let sortedArtists = BIB_ARTISTS.sort(sortingArtistsByCotation);
+		let sortedArtists = cleanedArtistsList.sort(sortingArtistsByCotation);
 		let onlyFirstResults = sortedArtists.slice(0, limitForRandomPicking);
 		onlyFirstResults.forEach(artist => {
 			finalArtistNameList.push(artist.name);
