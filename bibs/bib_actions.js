@@ -13,6 +13,7 @@ const BIB_ACTIONS = [
 	"walking away under the rain",
 	"sleeping under a %adj_chara %plant",
 	"talking",
+	"selling their wares",
 
 	"bathing in front of a magma pool",
 	"bathing in a lagoon",

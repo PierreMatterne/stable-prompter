@@ -1,6 +1,8 @@
 const BIB_PLACENAMES = [
+	"beach",
 	"bog",
 	"building",
+	"canyon",
 	"cave",
 	"clearing",
 	"desert",
@@ -22,6 +24,7 @@ const BIB_PLACENAMES = [
 	"prominence",
 	"quagmire",
 	"saltwater",
+	"savannah",
 	"sea",
 	"steppe",
 	"swamp",
@@ -29,6 +32,7 @@ const BIB_PLACENAMES = [
 	"thicket",
 	"tower",
 	"trees",
+	"village",
 	"wood",
 	];
 
@@ -50,6 +54,7 @@ const BIB_PLACES = {
 		"a %adj_place desert with few %adj_objects %plant",
 		"a %adj_place island, surrounded by a %color sea",
 		"desert of %color sand, with %color rocks and dead %plant",
+		"the grass",
 		],
 	"Winter-ish" : [
 		"the top of a %adj_place mountain",

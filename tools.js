@@ -100,6 +100,8 @@ const replacingWords = text => {
 		text = text.replace('%landmark', pickOne(BIB_LANDMARKS));
 		text = text.replace('%hair', pickOne(currentSelectables.hairs));
 		text = text.replace('%cloth', pickOne(currentSelectables.cloths));
+		text = text.replace('%weather', pickOne(BIB_WEATHERS));
+		/* Add %metal ? */
 
 		loop++; // failsafe
 		if(loop >=300){

@@ -131,7 +131,7 @@ const ADJ_CHARA = {
 		"paper",
 		],
 
-	"Nationnality" : [
+	"Nationality" : [
 		"russian",
 		"african",
 		"arabic",
@@ -152,6 +152,7 @@ const ADJ_CHARA = {
 		"wet",
 		"wavy",
 		"wielding",
+		"celestial",
 		"undead",
 		"space",
 		"singing",
@@ -333,6 +334,7 @@ const ADJ_CHARA = {
 		"masked",
 		"massive",
 		"mechanical",
+		"mechanised",
 		"medieval",
 		"metal",
 		"metal",

@@ -114,6 +114,7 @@ const SUBJECTS = {
 		"A young boy and girl, prince and princess in a %place.",
 		"A cute %character, creature of darkness with big cutes cat eyes.",
 		"A erotic oil painting of a %adj_chara %adj_chara %character ",
+
 		],
 
 "Scene": [
@@ -193,13 +194,33 @@ const SUBJECTS = {
 
 "Landscapes": [
 	"Two %character on a roof. In a distance, a %material tower partially masked by the fog.",
-	"A huge %nameplace with giant %plant tree.",
+	"A huge %nameplace with a rock made of pebble and giant %plant tree.",
+	"A %adj_place %nameplace, with rolling hills and a babbling brook winding through it.",
+	"A %adj_place %nameplace range, with snow-capped peaks and a misty valley below.",
+	"A %adj_place %nameplace, with tall %plant trees and dappled sunlight filtering through the leaves.",
+	"A %adj_place %nameplace of towering sand dunes under a brilliant %color sky.",
+	"A %adj_place %nameplace, with gentle waves lapping at the shore and a colorful %plant-filled coastline.",
+	"A %adj_place %nameplace, with grassy plains stretching as far as the eye can see and majestic %animal herds grazing in the distance.",
+	"A %adj_place %nameplace, with moss-covered trees and a misty, otherworldly atmosphere.",
+	"A %adj_place %nameplace, with crystal-clear waters and a %adj_place %plant-covered shoreline.",
+	"A %adj_place %nameplace, with huge rock formations and a winding river carving its way through the landscape.",
+	"A %adj_place %nameplace, nestled in a lush valley with a quaint %building-filled town center.",
 	],
 
 "Vehicule": [
 	"A car made of %material, exposed in a place.",
 	"A concept drawing of a vegetal hovering vehicule.",
 	"An old rusted iron locomotive, buried under vegetation. Light is working.",
+	"A %adj_object %color sports car, with aerodynamic curves and a powerful engine under the hood.",
+	"A %adj_object %color pickup truck, with a spacious bed and off-road capabilities for any adventure.",
+	"A %adj_object %color sedan, with plush leather seats and high-tech amenities for a comfortable ride.",
+	"A %adj_object %color muscle car, with a roaring engine and iconic styling that turns heads on the street.",
+	"A %adj_object %color concept car, with cutting-edge technology and avant-garde design that looks like it's from another planet.",
+	"A %adj_object %color SUV, with ample cargo space and versatile capabilities for any terrain or weather.",
+	"A %adj_object %color roadster, with an open top and timeless styling that exudes classic charm and sophistication.",
+	"A %adj_object %color motorcycle, with sleek lines and a powerful engine.",
+	"A %adj_object %color minivan, with ample seating and a group of friends on the go.",
+	"A %adj_object %color semi-truck, with a massive engine and a trailer in tow, hauling cargo across a %placename.",
 	],
 
 "Animal": [
@@ -269,6 +290,7 @@ const SUBJECTS = {
 
 "Medieval drawing": 
 [
+	
 	"An illumination depicting a %building with several towers and battlements.",
 	"An intricate drawing on a page yellowed with age. A knight on horseback, in full armor, holding a lance.",
 	"An illumination in a codex. A woman bath in a bucket. A rabbit watches her.",
@@ -276,8 +298,76 @@ const SUBJECTS = {
 	"A wood gravure showing soldiers with spears and bows, and a group of people gathered outside the castle gates.",
 	"A copper gravure, depicting a man holding a shield.",
 	"A woodcarving, representing death dancing around a rich couple.",
+	
+	"A drawing of a %adj_chara knight riding a powerful %animal, with a %adj_object %object in hand, ready for battle.",
+	"A two-page drawing of a bustling medieval market, with merchants %action and villagers %action.",
+	"A illumination drawing of a grand %building with intricate %material details and soaring towers.",
+	"A %adj_chara medieval cottage, surrounded by a verdant %plant-filled landscape, with a family going about their daily %action.",
+	"A group of %adj_chara musicians, playing traditional instruments and entertaining a crowd of villagers.",
+	"A medieval banquet, with lords and ladies dining on sumptuous dishes and enjoying music and dance.",
+	"A medieval joust, with knights in full armor charging towards each other on horseback, with a cheering crowd in the background.",
+	"A medieval procession, with religious figures and members of the nobility walking through the streets, accompanied by musicians and flag bearers.",
+	"A %adj_chara alchemist's laboratory, filled with arcane %objects and mysterious %materials.",
+	"A medieval siege, with attackers and defenders battling it out using archery, catapults, and other medieval %techniques.",
 	],
+
+"Tarot card": [
+	"A card depicting a regal figure, wearing a crown and holding a golden %object, representing power and authority.",
+	"The image of a serene %plant against a calming %adj_place background, symbolizing growth and harmony.",
+	"A card featuring a fierce %animal, standing its ground and protecting its territory, representing courage and strength.",
+	"A card depicting a beautiful %celebrity, holding a %adj_object and surrounded by admirers, representing success and charm.",
+	"The image of a towering %building, stretching towards the sky and symbolizing achievement and ambition.",
+	"A card featuring a pair of hands using advanced %techniques to create a masterpiece, representing creativity and craftsmanship.",
+	"A card depicting a group of people engaging in a joyful %action, such as dancing or celebrating, representing community and happiness.",
+	"The image of a mysterious %character, wearing a cloak and holding a lit %object, symbolizing secrets and intuition.",
+	"A card featuring a beautiful %color sky and a shining %adj_chara body, representing hope and inspiration.",
+	"A card depicting a figure in a state of deep %adj_chara contemplation, surrounded by a serene %adj_place landscape, representing meditation and introspection.",
+	],
+
+"Book and Magazine": [
+	"An open book with gothic text and title in gold letters. The cover is made of %material.",
+	"The cover of a people magazine with a %adj_chara %character under a %color title.",
+	"A comic book cover with %color %character and the %color %character.",
+	"A newspaper front page with big title and photo of a %adj_chara %character %action.",
+	"A picture of a %celeb wearing a stunning %cloth gown, standing in front of a majestic %building.",
+	"The cover of a fashion magazine featuring a %character with %hair, wearing a %color %cloth.",
+	"A science fiction book cover with a striking image of a %animal-like spacecraft in space.",
+	"A vintage science fiction book cover with a depiction of a %animal-shaped alien holding a woman.",
+	"The cover of a gardening magazine with a beautiful photo of a %plant in full bloom, set against a serene %adj_place landscape.",
+	"A history magazine with a picture of a fierce %character wielding a %object made of %material, standing on a battlefield.",
+	"A magazine cover featuring a %celeb couple holding hands and walking down a busy %adj_place street, with a bold %color headline.",
+	"A crime novel cover with an image of a mysterious %character wearing %cloth and holding a %adj_object %object.",
+	"A sheet of paper with a drawing of a %feature %character standing in front of a bright %color background, suggesting anonymity and mystery.",
+	"The cover of a travel magazine with a breathtaking photo of a %placename, showcasing its natural beauty and cultural heritage.",
+	"A memoir cover with a candid photo of the %celebrity author, surrounded by %objects and personal belongings.",
+	],
+
+"New to be tested": [
+	"Three nobles %character in rich %cloth, standing next to each other in a decorated room.",
+	"Two %character slaves, in %cloth, standing under a %plant tree.",
+	"A stairway on a %adj_place %building. %weather",
+	"In the darkness of the night, a standing %animal with lights above it's head.",
+	"Milk drop coronet in %place.",
+	"%character and %character on each side of a huge fence.",
+	"Workers sitting on a bench in %place.",
+	"A %character flying to another lying on his back.",
+	"A %character leading a revolution. Smoke and dead body.",
+	"A strong wave of sea water with foam. %weather",
+	"A menacing %character, defending it's childs. %weather",
+	"A %character sitting alone in a %place. %weather",
+	"Three %character taking a picnic on %place.",
+	"A groupe of %adj_chara %character, waiting in %place.",
+	"A child taking care of another. %weather",
+	"A young %character ridding a %animal with it's instructor.",
+	"Two %adj_chara %adj_chara %character playing instruments in %place.",
+	],
+
 };
+
+
+
+
+
 
 
 

@@ -24,7 +24,7 @@ const ARTISTS_TAGS_GLOSSARY = {
 		{tag: "glitch", description: "Glitch", definition: "Something feels wrong with this…"},
 		{tag: "gore", description: "Gore", definition:""},
 		{tag: "highcontrast", description: "High contrast", definition:""},
-		{tag: "linedrawing", description: "Line drawing", definition:""},
+		{tag: "drawing", description: "Drawing", definition:"Sketch, pencil crobart"},
 		{tag: "monochromatic", description: "Monochromatic", definition:""},
 		{tag: "lowcontrast", description: "Low contrast", definition:""},
 		{tag: "detailed", description: "Detailed", definition:""},

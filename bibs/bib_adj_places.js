@@ -1,7 +1,6 @@
 const ADJ_PLACES = {
 	"Lush & Joyfull": [
 		"flowering",
-		"calm",
 		"fertile",
 		"living",
 		"musicale",
@@ -14,6 +13,14 @@ const ADJ_PLACES = {
 		"ethereal",
 		"holy",
 		],
+	"Serene":[
+		"serene",
+		"tranquil",
+		"picturesque",
+		"peaceful",
+		"mystical",
+		"calm",
+		],
 	"Normal": [
 		"dense",
 		"rocky",
@@ -24,7 +31,12 @@ const ADJ_PLACES = {
 		"windy",
 		"tall",
 		"old",
+		"rugged",
+		"windswept",
+		"vast",
+		"dramatic",
 		"winter",
+		"wet",
 		],
 	"Sinister & Dangerous": [
 		"cold",

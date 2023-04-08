@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			font-size: 14px;
+		}
+		#tags {
+			columns: 6;
+		}
+		div, button {
+			margin-top:1em;
+		}
+		a {
+			text-decoration: none;
+			font-size: 1.2em;
+			color: #3366FF;
+		}
+		#error {
+			color: #C00;
+			font-weight: bold;
+		}
+
+		.medium {
+		}
+		.movement {
+			color: #f99;
+		}
+		.fakebutton {
+			display: inline-block;
+			border:1px solid #0009;
+			background: #0003;
+			cursor: pointer;
+			padding: 0.5em 1em;
+			border-radius: 0.25em;
+		}
+		.small {
+			font-size: 0.8em;
+		}
+		.center {
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	
+<!-- Cet outil va puiser un artiste dans la liste des "pas encore traité"
+Propose le lien google
+Me permet de cocher des cases
+Me fournit la ligne à coller dans la liste des artistes "traités"
+
+-->
+
+<h2 class="center">Exploring artists</h2>
+
+<div class="center">
+	Click here to open a google image page:<br> 
+	<div id="searchlinks" class="fakebutton"></div><br><br>
+	Then select the corresponding tags:
+</div>
+<hr>
+<div id="tags"></div>
+<hr>
+<div class="center">
+	<input type="checkbox" value="vip">Is a VIP ?<br>
+	<button onclick="createLine()">Create the JS Line</button>
+	<div id="error"></div>
+</div>
+<hr>
+<div class="center">
+	<p id="line"></p>
+	<span class="small">Tip: this line is copied in the clipboard too!</span>
+</div>
+
+
+<script src="glossary.js"></script>
+<script src="../bibs/bib_artists.js"></script>
+<script>
+	var currentArtist = null;
+
+	const createLine = () => {
+/* get all the checked tags and create an array in the clipboard*/
+
+		let listTags = [];
+		for (let gloss of glossary){
+			if (!!document.querySelector(`input[value="${gloss.tag}"]`).checked){
+				listTags.push(gloss.tag);
+			}
+		}
+		let el = document.getElementById('line');
+		let html = `{name: "${currentArtist.name}", `;
+
+		if (currentArtist.isKnown){
+			html += "isKnown: true, "
+		}else if(currentArtist.isKnown === false){
+			html += "isKnown: false, "
+		}
+
+		if (!!document.querySelector(`input[value="vip"]`).checked){
+			html += "vip: true, ";
+		}
+
+		html += "tags: [";
+		for (let t of listTags){
+			html += `"${t}", `;
+		}
+		html += "]},";
+		el.innerHTML = html;
+		navigator.clipboard.writeText(html);
+	}
+
+	const pickOne = list => {
+		return list[Math.floor(Math.random() * list.length)];
+	}
+
+	const getArtist = () => {
+		/* prendre le premier artiste SANS tags */
+		let repereIndex = 0;
+		for (let i=0; i<BIB_ARTISTS.length; i++){
+			let tags = BIB_ARTISTS[i].tags;
+			if (tags.length <= 1){
+				repereIndex = i;
+				break;
+			}
+		}
+		currentArtist = BIB_ARTISTS[repereIndex];
+
+		if('tags' in currentArtist && currentArtist.tags.length > 0){
+			for(let tag of currentArtist.tags){
+				if (!!tag){
+					try{
+						document.querySelector(`input[value="${tag}"]`).checked = true;
+					}catch(e){
+						document.getElementById('error').innerHTML="Vieux tag: " + tag;
+					}
+				}
+			}
+		}
+		displayGoogleLinks(currentArtist.name);
+	}
+
+	const displayGoogleLinks = (name) =>{
+		let html = "";
+		console.log(name);
+		try{
+			html+= `<a href="https://www.google.com/search?tbm=isch&q=art+by+${name.replaceAll(' ', '+')}" target="newframe">${name}</a>`;
+		}catch(e){
+			console.log(e);
+		}
+		let el = document.getElementById('searchlinks');
+		el.innerHTML = html;
+	}
+
+	const createHtml = () => {
+		let html = "";
+		for (let gloss of glossary){
+			html += `<input type="checkbox" value="${gloss.tag}"><span class="${gloss.category}">${gloss.description}</span><br>`;
+		}
+		return html;
+	}
+
+	/* Au chargement de la page, constituer la liste des checkboxes */
+	let target = document.getElementById("tags");
+	target.innerHTML = createHtml();
+	getArtist();
+
+
+</script>
+</body>
+</html>
