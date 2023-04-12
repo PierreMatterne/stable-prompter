@@ -29,4 +29,4 @@ For this project, I use code that can run locally without server, vue.js or even
 
 ## Gallery
 
-You can explore the Artbreeder gallery I (mainly) constituted with this tool: https://www.artbreeder.com/pierre.matterne
+You can explore the Artbreeder gallery I (mainly) constitute with this tool while developping it: https://www.artbreeder.com/pierre.matterne
