@@ -43,11 +43,14 @@
 			<div>
 				<h3>Description must include…</h3>
 				<div id="ingredients">
+					<input type="checkbox" name="ingredients" id="includetypes">
+					<label for="includetypes">Type of picture</label><br>
+
 					<input type="checkbox" name="ingredients" id="lookalike">
-					<label for="ingredients">Celebrity</label><br>
+					<label for="lookalike">Celebrity</label><br>
 
 					<input type="checkbox" name="ingredients" id="features">
-					<label for="ingredients">Features</label><br>
+					<label for="features">Features</label><br>
 
 					<input type="checkbox" name="ingredients" id="renderings">
 					<label for="renderings">Renderings techniques</label><br>
@@ -65,6 +68,7 @@
 			<div>
 				<h3>I'd like to modify parts of suggestion</h3>		
 				<div id="parts" class="parts">
+					<button id="onlyChangeImageType" class="hidden"></button>
 					<button id="onlyChangeSubject"></button>
 					<button id="onlyChangeLookalike" class="hidden"></button>
 					<button id="onlyChangeFeatures" class="hidden"></button>
@@ -80,6 +84,13 @@
 	<h2>…I would like to be REALLY more specific.</h2>	
 
 	<div class="mainGrid">
+
+		<section>
+			<h3>I'd like this kind of picture</h3>
+			<div class="sectioncontent">	
+				<div id="imagetypeslist"></div>
+			</div>
+		</section>
 
 		<section>
 			<h3>About the characters (if any)</h3>
@@ -177,6 +188,7 @@
 
 		<!-- Bibliotheques -->
 		<script src="bibs/glossary.js"></script>
+		<script src="bibs/bib_imagetypes.js"></script>
 		<script src="bibs/bib_actions.js"></script>
 		<script src="bibs/bib_adj_characters.js"></script>
 		<script src="bibs/bib_characters.js"></script>

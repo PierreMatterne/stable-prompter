@@ -5,6 +5,10 @@ const currentSelectables = {};
 const currentProposition = {};
 
 /* OBTAIN A STRUCTURE FOR WORDS */
+const getImageTypes = () => {
+	let getChoosenImageTypes = getSelectedCheckboxesOfName("imagetypes");
+	return pickOne(assembleListOfUniqueElements(getChoosenImageTypes, BIB_IMAGETYPES));
+}
 const getMainSubject = () => {
 	let getTheChoosenSubjet = getSelectedCheckboxesOfName("subjects");
 	return pickOne(assembleListOfUniqueElements(getTheChoosenSubjet, SUBJECTS));
@@ -92,14 +96,7 @@ const getListOfSelectableArtists = (number) => {
 	let requestedArtistCategory = getDetailsOfCheckboxesForSerie("chooseArtists"); 
 	giveAllArtistsFirstCotation(BIB_ARTISTS);
 
-
-
 	let cleanedArtistsList = getListCleanedOfSpecialCases();
-
-
-
-
-
 
 	let finalArtistNameList = [];
 	if(requestedArtistCategory.checkedList.length === 0){
@@ -150,6 +147,10 @@ const refreshTexts = () => {
 }
 
 /* ==== BUILDERS ==== */
+const buildImageType = () => {
+	currentProposition.imageType = getImageTypes() + " " + pickOne(BINDING_IMAGETYPES) + " ";
+	refreshTexts();
+}
 const buildSubject = () => {
 	currentProposition.subject = replacingWords(getMainSubject());
 	refreshTexts();
@@ -205,9 +206,18 @@ const configCategoryCheckboxes = [
 	{boxId: "inspirationsource", propositionName: "inspiration"},
 	/* For artist, there is no checkboxes but an input range */
 	];
+
 const composeTheFinalText = () => {
 	let html = "";
-	html += currentProposition.subject;
+	if(isCheckBoxChecked("includetypes")){
+		html += currentProposition.imageType;
+	}
+	if(isCheckBoxChecked("includetypes")){
+		let str = currentProposition.subject;
+	html += str?.charAt(0).toLowerCase() + str?.slice(1); /* ? because charAt return an error when str is null at first pass */
+	}else{
+		html += currentProposition.subject;
+	}
 	configCategoryCheckboxes.forEach(cbox => {
 		if(isCheckBoxChecked(cbox.boxId)){
 			html += currentProposition[cbox.propositionName];
@@ -227,6 +237,7 @@ const composeTheFinalText = () => {
 /* Gather information and construct a text */
 const generateNewPrompt = () => {
 	let html = "";
+	buildImageType();
 	buildSubject();
 	buildLookalike();
 	buildFeatures();
@@ -240,6 +251,9 @@ const buttonToggleHideOrFill = () => {
 }
 
 const displayParts = () => {
+	/* IMAGE TYPE */
+	document.querySelector("#onlyChangeImageType").classList.toggle('hidden', !isCheckBoxChecked("includetypes"));
+	if(!!currentProposition.imageType){ placeInDOM(currentProposition.imageType, 'onlyChangeImageType') };
 	/* SUBJECT */
 	if (!!currentProposition.subject){ placeInDOM(currentProposition.subject, 'onlyChangeSubject') };
 	/* CELEB LOOKALIKE */
@@ -280,6 +294,7 @@ const displayText = () => {
 
 /* PREPARATION OF PART BUTTONS : they must listen to click event */
 const configPartButtons = [
+	{id: "#onlyChangeImageType", callback: buildImageType},
 	{id: "#onlyChangeSubject", callback: buildSubject},
 	{id: "#onlyChangeLookalike", callback: buildLookalike},
 	{id: "#onlyChangeFeatures", callback: buildFeatures},
@@ -296,6 +311,7 @@ const preparePartsButtons = () => {
 
 /* PREPARATION OF CHECKBOXES LISTS */
 const prepareAllCheckboxesLists = () => {
+	prepareCheckboxes("#imagetypeslist", BIB_IMAGETYPES, "imagetypes");
 	prepareCheckboxes("#charaAdjCheckboxes", ADJ_CHARA, "adj_chara");
 	prepareCheckboxes("#subjectsList", SUBJECTS, "subjects");
 	prepareCheckboxes("#colorList", BIB_COLORS, "colors");
