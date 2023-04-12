@@ -17,11 +17,17 @@ const BIB_IMAGETYPES = {
 		"A concept art",
 		"A digital collage",
 		"A 3D rendering",
-		"A vector draing",
+		"A vector drawing",
 		"A speed painting",
 		"A digital painting",
 		"A digital artwork",
 		"A digital manipulation",
+		"A pixel art",
+		"ASCII art", 
+		"Fractal art", 
+		"Glitch art", 
+		"3D modeling", 
+		"3D wireframe", 
 		],
 	"Plastic Arts": [
 		"A concept art",
@@ -66,6 +72,7 @@ const BIB_IMAGETYPES = {
 		],
 	"Sculpture": [
 		"A sculpture",
+		"A voxel sculpture",
 		"A clay sculpture",
 		"A wood sculpture",
 		"A metal sculpture",
@@ -96,11 +103,6 @@ const BIB_IMAGETYPES = {
 		"A nature-inspired mandala artwork",
 		],
 };
-
-
-
-
-
 
 const BINDING_IMAGETYPES = [
 	"capturing",

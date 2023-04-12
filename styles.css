@@ -84,6 +84,7 @@ h4:first-child {
 	right:10px;
 	opacity: 1;
 	transition: opacity 0.3s ease-in-out;
+	cursor: pointer;
 }
 #btt.btthidden {
 	opacity: 0;
