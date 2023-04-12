@@ -26,3 +26,5 @@ For this project, I used code that can run locally without server, vue.js or eve
 "A charcoal sketch representing an illuminated minimalistic hospital in the street by night. nickel columns. It aim to capture the feeling of Dune (1984). In the style of Vladimir Kush"
 
 "A paper sculpture portraying a huge ocean with a rock made of pebble and giant oak tree. They are Meryl Streep lookalikes. In the style of Eduardo Kobra, Disney, Janine Antoni, Jeff Lemire, and Stanley Artgerm."
+
+You can explore the Artbreeder gallery I mainly constituted with this tool: https://www.artbreeder.com/pierre.matterne
