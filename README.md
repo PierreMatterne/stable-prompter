@@ -27,4 +27,6 @@ For this project, I used code that can run locally without server, vue.js or eve
 
 "A paper sculpture portraying a huge ocean with a rock made of pebble and giant oak tree. They are Meryl Streep lookalikes. In the style of Eduardo Kobra, Disney, Janine Antoni, Jeff Lemire, and Stanley Artgerm."
 
-You can explore the Artbreeder gallery I mainly constituted with this tool: https://www.artbreeder.com/pierre.matterne
+## Gallery
+
+You can explore the Artbreeder gallery I (mainly) constituted with this tool: https://www.artbreeder.com/pierre.matterne
