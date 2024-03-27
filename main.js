@@ -382,3 +382,61 @@ const init = () => {
 
 init();
 
+
+
+
+
+
+
+// THERE IS PROBABLY A WAY TO SIMPLIFY ALL THIS…
+
+// List of checkboxes
+let descriptTypeOfPict = document.querySelector("#includetypes");
+let descriptLookalike = document.querySelector("#lookalike");
+let descriptFeatures = document.querySelector("#features");
+let descriptRenderings = document.querySelector("#renderings");
+let descriptInspiration = document.querySelector("#inspirationsource");
+let descriptArtistSource = document.querySelector("#artistssource");
+// List of sections
+let targetPictureType = document.querySelector("#aboutPicturetypes");
+let targetLookAlike = document.querySelector("#aboutLookalikes");
+let targetFeatures = document.querySelector("#aboutFeatures");
+let targetRenderings = document.querySelector("#aboutRenderings");
+let targetInspiration = document.querySelector("#aboutInspiration");
+let targetArtistSource = document.querySelector("#aboutArtists");
+// Reactions
+const checkDisplayOfTypesBox = (event) => {
+	console.log(event.target.checked);
+	targetPictureType.classList.toggle('visible');
+}
+const checkDisplayOfLookalikes = (event) => {
+	console.log(event.target);
+	targetLookAlike.classList.toggle('visible');
+}
+const checkDisplayOfFeatures = (event) => {
+	console.log(event.target);
+	targetFeatures.classList.toggle('visible');
+}
+const checkDisplayOfRenderings = (event) => {
+	console.log(event.target);
+	targetRenderings.classList.toggle('visible');
+}
+const checkDisplayOfInspiration = (event) => {
+	console.log(event.target);
+	targetInspiration.classList.toggle('visible');
+}
+const checkDisplayOfArtists = (event) => {
+	console.log(event.target);
+	if(event.target.value > 0){
+		targetArtistSource.classList.add('visible');
+	}else{
+		targetArtistSource.classList.remove('visible');
+	}
+}
+// Eventlisteners on checkboxes
+descriptTypeOfPict.addEventListener('change', checkDisplayOfTypesBox);
+descriptLookalike.addEventListener('change',  checkDisplayOfLookalikes);
+descriptFeatures.addEventListener('change',  checkDisplayOfFeatures);
+descriptRenderings.addEventListener('change',  checkDisplayOfRenderings);
+descriptInspiration.addEventListener('change',  checkDisplayOfInspiration);
+descriptArtistSource.addEventListener('change',  checkDisplayOfArtists);

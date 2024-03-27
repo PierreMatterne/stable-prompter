@@ -35,6 +35,16 @@ a {
 
 /* ABOVE : validated */
 
+
+.hideable {
+	display: none;
+}
+.hideable.visible {
+	display: block;
+}
+
+
+
 section {
 	border: 4px solid #0003;
 	border-radius: 1rem;
