@@ -424,6 +424,7 @@ const BIB_ARTISTS = [
 	{name: "Claire Hummel", isKnown: false, vip: true, tags: ["cartoon", "character", "clean", "colorful", "digital", "drawing", "flatcolors", "portrait", ]},
 	{name: "Christian Wilhelm Allers", isKnown: true, tags: ["clean", "drawing", "monochromatic", "portrait", ]},
 	{name: "Circle-A", isKnown: false, tags: ["clean", "colorful", "gynocentric", "manga", ]},
+	{name: "Patrick Nagel", vip: true, isKnown: true, tags: ["highcontrast", "popart", "portrait", "clean", "flatcolors", "gynocentric"]}, 
 
 
 /*
@@ -473,6 +474,7 @@ Empty tags (for now…) or must determine if they are known by Artbreeder.
 	{name: "Eric Zener", isKnown: true, tags: ["detailed", "gynocentric", "highcontrast", "scene", ]},
 	{name: "Fenghua Zhong", isKnown: true, vip: true, tags: ["dark", "detailed", "fantasy", "lowcontrast", "messy", ]},
 	{name: "Gene Luen Yang", vip: true, tags: ["cartoon", "character", "comics", "drawing", "flatcolors", "scene", ]},
+
 	{name: "Félix Labisse", isKnown: true, tags: []}, 
 	{name: "Frits Van den Berghe", isKnown: true, tags: []}, 
 	{name: "Gerda Wegener", isKnown: true, tags: []}, 
@@ -3711,7 +3713,7 @@ const toDoubleCheck = [
 	{name: "Patrick Caulfield", tags: ["colorful", "vibrant", "highcontrast"]}, 
 	{name: "Patrick Dougherty", tags: ["sculpture", "nature", "installation"]}, 
 	{name: "Patrick Heron", isKnown: false, tags: ["abstract", "expressionism"]}, 
-	{name: "Patrick Nagel", "vip": true, tags: ["highcontrast", "popart", "portrait"]}, 
+
 	{name: "Patrick Woodroffe", isKnown: false, tags: ["scifi", "surrealism", "detailed"]}, 
 	{name: "Paul Barson", isKnown: true, tags: ["dark", "photography"]}, 
 	{name: "Paul Cadmus", tags: ["nudity", "scene", "portrait", "realism"]}, 

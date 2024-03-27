@@ -35,6 +35,13 @@ const ADJ_CHARA = {
 		"straight",
 		"stocky",
 		"shy",
+		"baddie",
+		"snob",
+		"exited",
+		"dynamic",
+		"lazy",
+		"soft",
+		"though",
 		"serious",
 		"relaxed",
 		"quiet",
@@ -50,6 +57,7 @@ const ADJ_CHARA = {
 		"small-footed",
 		"large-eared",
 		"winged",
+		"insect wings",
 		],
 
 	"Body shape and Size" : [
@@ -57,6 +65,8 @@ const ADJ_CHARA = {
 		"big",
 		"great",
 		"small",
+		"chibi",
+		"super deformed",
 		"tall",
 		"short",
 		"thin",
@@ -103,7 +113,9 @@ const ADJ_CHARA = {
 		"small-eyed",
 		"big-eyed",
 		"high-cheekboned",
-		"narrow-nosed"],
+		"pronounced cheekbones",
+		"narrow-nosed",
+		],
 
 	"Fashion": [
 		"victorian",
@@ -156,6 +168,7 @@ const ADJ_CHARA = {
 		"undead",
 		"space",
 		"singing",
+		"doll-like",
 		],
 
 	"Physical Abilities" : [
@@ -185,6 +198,7 @@ const ADJ_CHARA = {
 		"wrinkled",
 		"woolly",
 		"tatooed",
+		"soft",
 		"scaly",
 		"slimy",
 		"shiny",
@@ -200,6 +214,21 @@ const ADJ_CHARA = {
 		"curvy",
 		"alluring",
 		"big breasted",
+		],
+
+	"Origin": [
+		"desert",
+		"forest",
+		"water",
+		"ocean",
+		"snow",
+		"toundra",
+		"jungle",
+		"ground",
+		"airborn",
+		"dust",
+		"town",
+		"lab specimen",
 		],
 
 	"Unclassed" : [

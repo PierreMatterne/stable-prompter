@@ -9,6 +9,7 @@ const BIB_PLACENAMES = [
 	"dungeon",
 	"elevation",
 	"expanse",
+	"meadow",
 	"forest",
 	"grassland",
 	"jungle",
