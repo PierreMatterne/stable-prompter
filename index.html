@@ -12,205 +12,206 @@
 	
 	<main>
 
+		<div class="wrapper">
 
-		<div class="prompter">
-			<div id="prompt" class="zonePrompt"></div>
-			<div class="autocopy">
-				<label for="clipboard">Auto-copy to clipboard</label>
-				<input type="checkbox" name="clipboard" id="clipboard">
-				<br><br>
-			</div>
-			<button id="btnGenPrompt">Ô, muse, inspire me a new prompt!</button>
-		</div>
-
-
-		<div id="link_artists" class="hidden">
-			Want to see the work of the involved (sort of) artists? 
-			<div id="searchlinks"></div>
-		</div>
-
-
-
-		<h2>It's nice and all, but I would like to be more specific</h2>
-
-		<div class="col2">
-			<div>
-				<h3>I'd like a picture representing either a…</h3>
-				<div id="subjectsList"></div>
-			</div>
-			<div>
-				<h3>I'd like to modify parts of suggestion</h3>		
-				<div id="parts" class="parts">
-					<button id="onlyChangeImageType" class="hidden"></button>
-					<button id="onlyChangeSubject"></button>
-					<button id="onlyChangeLookalike" class="hidden"></button>
-					<button id="onlyChangeFeatures" class="hidden"></button>
-					<button id="onlyChangeRendering" class="hidden"></button>
-					<button id="onlyChangeInspiration" class="hidden"></button>
-					<button id="onlyChangeArtists" class="hidden"></button>
+			<div class="prompter">
+				<div id="prompt" class="zonePrompt"></div>
+				<div class="autocopy">
+					<label for="clipboard">Auto-copy to clipboard</label>
+					<input type="checkbox" name="clipboard" id="clipboard">
+					<br><br>
 				</div>
+				<button id="btnGenPrompt">Ô, muse, inspire me a new prompt!</button>
 			</div>
 
-		</div>
-	</div>
 
-	<h2>…I would like to be REALLY more specific.</h2>
-
-	<div>
-		<h3>Description must include…</h3>
-		<div id="ingredients">
-			<input type="checkbox" name="ingredients" id="includetypes">
-			<label for="includetypes">Type of picture</label><br>
-
-			<input type="checkbox" name="ingredients" id="lookalike">
-			<label for="lookalike">Celebrity</label><br>
-
-			<input type="checkbox" name="ingredients" id="features">
-			<label for="features">Features</label><br>
-
-			<input type="checkbox" name="ingredients" id="renderings">
-			<label for="renderings">Renderings techniques</label><br>
-
-			<input type="checkbox" name="ingredients" id="inspirationsource">
-			<label for="inspirationsource">A source of inspiration</label><br>
-			<br>
-			<label for="artistssource">How many artists contributed:</label><br>		
-			<input type="range" min="0" max="5" value="0" id="artistssource">
-			<span id="rangeValue">0</span>
-		</div>
-	</div>	
-
-	<div class="mainGrid">
-
-		<section id="aboutPicturetypes" class="hideable">
-			<h3>I'd like this kind of picture</h3>
-			<div class="sectioncontent">	
-				<div id="imagetypeslist"></div>
+			<div id="link_artists" class="hidden">
+				Want to see the work of the involved (sort of) artists? 
+				<div id="searchlinks"></div>
 			</div>
-		</section>
 
-		<section id="aboutLookalikes" class="hideable">
-			<h3>About the characters (if any)</h3>
-			<div class="sectioncontent col3">			
-				<h4>Kind of characters</h4>
-				<div id="characters"></div>
-				<h4>Caracteristics</h4>
-				<div id="charaAdjCheckboxes"></div>
-				<h4>Likeness</h4>
-				The main character looks like…
-				<div id="lookalikes"></div>
-				<h4>Hair</h4>
-				<div id="hairs"></div>
-				<h4>Cloths</h4>
-				<div id="cloths"></div>
-			</div>
-		</section>
 
-		<section id="aboutFeatures" class="hideable">
-			<h3>About the things (if any)</h3>
-			<div class="sectioncontent grid-col3">
+
+			<h2>It's nice and all, but I would like to be more specific</h2>
+
+			<div class="col2">
 				<div>
-					<h4>Kind of buildings…</h4>
-					<div id="buildings"></div>
+					<h3>I'd like a picture representing either a…</h3>
+					<div id="subjectsList"></div>
 				</div>
 				<div>
-					<h4>Kind of objects</h4>
-					<div id="objects"></div>
-					<h4>…and it should be…</h4>
-					<div id="adjobjects"></div>
-				</div>
-				<div>
-					<h4>Kind of places</h4>
-					<h5>Name</h5>
-					<div id="places"></div>
-					<h5>Ambiance</h5>
-					<div id="adjplaces"></div>
-				</div>	
-			</div>
-		</section>
-
-		<section id="aboutRenderings" class="hideable">
-			<h3>About the picture</h3>
-			<div class="sectioncontent grid-col3">
-				<div>
-					<h4>Features</h4>
-					There must be some…
-					<div id="featureslist"></div>
-				</div>
-				<div>
-					<h4>Colors</h4>
-					<div id="colorList"></div>
-
-					<h4>Material</h4>
-					<div id="materials"></div>
-				</div>
-				<div>
-					<h4>Rendering techniques</h4>
-					<div id="techniques"></div>
-				</div>
-			</section>
-
-			<section id="aboutArtists" class="hideable">
-				<h3>About the ART</h3>
-				<p class="explanation">Select the categories that interest you the most. Artists from these chosen categories will have a higher chance of being randomly selected. The chances of being picked are cumulative for artists who are present in multiple categories.</p>
-				<hr>
-				
-				<input type="checkbox" name="excludeUnknown" id="excludeUnknown" checked><label for="excludeUnknown">Exclude artists unknown by Artbreeder</label><br>
-				<input type="checkbox" name="includeVIP" id="includeVIP"><label for="includeVIP">Include my personnal VIP</label><br>
-				<hr>
-
-				<div class="sectioncontent col3">
-					<div>
-						<div id="artistlist"></div>
+					<h3>I'd like to modify parts of suggestion</h3>		
+					<div id="parts" class="parts">
+						<button id="onlyChangeImageType" class="hidden"></button>
+						<button id="onlyChangeSubject"></button>
+						<button id="onlyChangeLookalike" class="hidden"></button>
+						<button id="onlyChangeFeatures" class="hidden"></button>
+						<button id="onlyChangeRendering" class="hidden"></button>
+						<button id="onlyChangeInspiration" class="hidden"></button>
+						<button id="onlyChangeArtists" class="hidden"></button>
 					</div>
 				</div>
-			</section>
 
-			<section id="aboutInspiration" class="hideable">
-				<h3>Other influences</h3>
-				<div class="sectioncontent col2">
-					<h4>Sources of inspiration</h4>
-					<div id="inspiration"></div>
+			</div>
+			
+
+			<h2>…I would like to be REALLY more specific.</h2>
+
+			<div>
+				<h3>Description must include…</h3>
+				<div id="ingredients">
+					<input type="checkbox" name="ingredients" id="includetypes">
+					<label for="includetypes">Type of picture</label><br>
+
+					<input type="checkbox" name="ingredients" id="lookalike">
+					<label for="lookalike">Celebrity</label><br>
+
+					<input type="checkbox" name="ingredients" id="features">
+					<label for="features">Features</label><br>
+
+					<input type="checkbox" name="ingredients" id="renderings">
+					<label for="renderings">Renderings techniques</label><br>
+
+					<input type="checkbox" name="ingredients" id="inspirationsource">
+					<label for="inspirationsource">A source of inspiration</label><br>
+					<br>
+					<label for="artistssource">How many artists contributed:</label><br>		
+					<input type="range" min="0" max="5" value="0" id="artistssource">
+					<span id="rangeValue">0</span>
 				</div>
-			</section>
+			</div>	
+
+			<div class="mainGrid">
+
+				<section id="aboutPicturetypes" class="hideable">
+					<h3>I'd like this kind of picture</h3>
+					<div class="sectioncontent">	
+						<div id="imagetypeslist"></div>
+					</div>
+				</section>
+
+				<section id="aboutLookalikes" class="hideable">
+					<h3>About the characters (if any)</h3>
+					<div class="sectioncontent col3">			
+						<h4>Kind of characters</h4>
+						<div id="characters"></div>
+						<h4>Caracteristics</h4>
+						<div id="charaAdjCheckboxes"></div>
+						<h4>Likeness</h4>
+						The main character looks like…
+						<div id="lookalikes"></div>
+						<h4>Hair</h4>
+						<div id="hairs"></div>
+						<h4>Cloths</h4>
+						<div id="cloths"></div>
+					</div>
+				</section>
+
+				<section id="aboutFeatures" class="hideable">
+					<h3>About the things (if any)</h3>
+					<div class="sectioncontent grid-col3">
+						<div>
+							<h4>Kind of buildings…</h4>
+							<div id="buildings"></div>
+						</div>
+						<div>
+							<h4>Kind of objects</h4>
+							<div id="objects"></div>
+							<h4>…and it should be…</h4>
+							<div id="adjobjects"></div>
+						</div>
+						<div>
+							<h4>Kind of places</h4>
+							<h5>Name</h5>
+							<div id="places"></div>
+							<h5>Ambiance</h5>
+							<div id="adjplaces"></div>
+						</div>	
+					</div>
+				</section>
+
+				<section id="aboutRenderings" class="hideable">
+					<h3>About the picture</h3>
+					<div class="sectioncontent grid-col3">
+						<div>
+							<h4>Features</h4>
+							There must be some…
+							<div id="featureslist"></div>
+						</div>
+						<div>
+							<h4>Colors</h4>
+							<div id="colorList"></div>
+
+							<h4>Material</h4>
+							<div id="materials"></div>
+						</div>
+						<div>
+							<h4>Rendering techniques</h4>
+							<div id="techniques"></div>
+						</div>
+					</section>
+
+					<section id="aboutArtists" class="hideable">
+						<h3>About the ART</h3>
+						<p class="explanation">Select the categories that interest you the most. Artists from these chosen categories will have a higher chance of being randomly selected. The chances of being picked are cumulative for artists who are present in multiple categories.</p>
+						<hr>
+
+						<input type="checkbox" name="excludeUnknown" id="excludeUnknown" checked><label for="excludeUnknown">Exclude artists unknown by Artbreeder</label><br>
+						<input type="checkbox" name="includeVIP" id="includeVIP"><label for="includeVIP">Include my personnal VIP</label><br>
+						<hr>
+
+						<div class="sectioncontent col3">
+							<div>
+								<div id="artistlist"></div>
+							</div>
+						</div>
+					</section>
+
+					<section id="aboutInspiration" class="hideable">
+						<h3>Other influences</h3>
+						<div class="sectioncontent col2">
+							<h4>Sources of inspiration</h4>
+							<div id="inspiration"></div>
+						</div>
+					</section>
+
+				</div>
 
 
+			</main>
 
+			<div id="btt" class="btthidden">TOP</div>
 
-		</main>
+			<footer>By Pierre Matterne | Tested on <a href="https://www.artbreeder.com/" target="_blank">Artbreeder</a>. See <a href="https://www.artbreeder.com/pierre.matterne?sort=new" target="_blank">my gallery</a></footer>
 
-		<div id="btt" class="btthidden">TOP</div>
+			<!-- Bibliotheques -->
+			<script src="bibs/glossary.js"></script>
+			<script src="bibs/bib_imagetypes.js"></script>
+			<script src="bibs/bib_actions.js"></script>
+			<script src="bibs/bib_adj_characters.js"></script>
+			<script src="bibs/bib_characters.js"></script>
+			<script src="bibs/bib_adj_objects.js"></script>
+			<script src="bibs/bib_objects.js"></script>
+			<script src="bibs/bib_adj_places.js"></script>
+			<script src="bibs/bib_places.js"></script>
+			<script src="bibs/bib_buildings.js"></script>
+			<script src="bibs/bib_celebrities.js"></script>
+			<script src="bibs/bib_colors.js"></script>
+			<script src="bibs/bib_hairs.js"></script>
+			<script src="bibs/bib_cloths.js"></script>
+			<script src="bibs/bib_features.js"></script>
+			<script src="bibs/bib_inspiration.js"></script>
+			<script src="bibs/bib_materials.js"></script>
+			<script src="bibs/bib_rendering.js"></script>
+			<script src="bibs/bib_weathers.js"></script>
+			<script src="bibs/bib_artists.js"></script>
+			<script src="bibs/structure_subjects.js"></script>
 
-		<footer>By Pierre Matterne | Tested on <a href="https://www.artbreeder.com/" target="_blank">Artbreeder</a>. See <a href="https://www.artbreeder.com/pierre.matterne?sort=new" target="_blank">my gallery</a></footer>
-
-		<!-- Bibliotheques -->
-		<script src="bibs/glossary.js"></script>
-		<script src="bibs/bib_imagetypes.js"></script>
-		<script src="bibs/bib_actions.js"></script>
-		<script src="bibs/bib_adj_characters.js"></script>
-		<script src="bibs/bib_characters.js"></script>
-		<script src="bibs/bib_adj_objects.js"></script>
-		<script src="bibs/bib_objects.js"></script>
-		<script src="bibs/bib_adj_places.js"></script>
-		<script src="bibs/bib_places.js"></script>
-		<script src="bibs/bib_buildings.js"></script>
-		<script src="bibs/bib_celebrities.js"></script>
-		<script src="bibs/bib_colors.js"></script>
-		<script src="bibs/bib_hairs.js"></script>
-		<script src="bibs/bib_cloths.js"></script>
-		<script src="bibs/bib_features.js"></script>
-		<script src="bibs/bib_inspiration.js"></script>
-		<script src="bibs/bib_materials.js"></script>
-		<script src="bibs/bib_rendering.js"></script>
-		<script src="bibs/bib_weathers.js"></script>
-		<script src="bibs/bib_artists.js"></script>
-		<script src="bibs/structure_subjects.js"></script>
-
-		<script src="tools.js"></script>
-		<script src="main.js"></script>
-		<script src="ui.js"></script>
-	</body>
-	</html>
+			<script src="tools.js"></script>
+			<script src="main.js"></script>
+			<script src="ui.js"></script>
+		</body>
+		</html>
 
 
 

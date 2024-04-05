@@ -150,6 +150,10 @@ main {
 	color: #fffe;
 	padding: 2em;
 }
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
 footer {
 	background: #0006;
 	padding:1em;
